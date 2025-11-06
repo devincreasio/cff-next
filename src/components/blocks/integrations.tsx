@@ -2,8 +2,10 @@ import Image from 'next/image'
 
 export function Integrations() {
     return (
-        <section className="container mx-auto flex flex-col items-center justify-center gap-5 py-16 text-center">
-            <h2 className="text-[40px] leading-[140%] font-semibold text-balance">
+        <section
+            className={`container mx-auto flex flex-col items-center justify-center gap-5 py-10 text-center lg:py-16`}
+        >
+            <h2 className="text-2xl leading-[140%] font-semibold text-balance lg:text-[40px]">
                 Integrates seamlessly with QuickBooks, Xero, Sage Intacct, Zoho Books and FreshBooks
             </h2>
             <p className="text-balance text-text-light">

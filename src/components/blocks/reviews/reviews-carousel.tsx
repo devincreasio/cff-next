@@ -11,12 +11,19 @@ interface ReviewsCarouselProps {
 
 export default function ReviewsCarousel({ data }: ReviewsCarouselProps) {
     return (
-        <Carousel className="w-full">
-            <CarouselContent className="px-4 pb-10 md:pb-20">
+        <Carousel
+            className="container mx-auto w-full px-0 md:px-4"
+            opts={{
+                align: 'center',
+                loop: true,
+                startIndex: 1,
+            }}
+        >
+            <CarouselContent className="pb-10 md:px-4 md:pb-20">
                 {data.testimonials.map((data, index) => {
                     if (!data) return null
                     return (
-                        <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={index}>
+                        <CarouselItem className="basis-10/12 md:basis-1/2 lg:basis-1/3" key={index}>
                             <div
                                 className={`
                                   flex h-full flex-col gap-4 rounded-xl border-t-4 border-green bg-white px-4 py-6

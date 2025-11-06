@@ -11,13 +11,18 @@ export function NewsletterCta() {
     const [email, setEmail] = useState('')
 
     return (
-        <section className="relative container mx-auto py-24">
-            <div className="px-12">
-                <div className={`flex flex-col gap-8 rounded-2xl bg-green px-16 pt-8 pb-12 shadow-custom`}>
-                    <h4 className="text-center text-[32px] leading-[140%] font-semibold text-white">
+        <section className="relative container mx-auto py-10 lg:py-24">
+            <div className="lg:px-12">
+                <div className={`flex flex-col gap-8 rounded-2xl bg-green px-4 py-8 shadow-custom lg:px-16 lg:pb-12`}>
+                    <h4
+                        className={`
+                          text-center text-2xl leading-[140%] font-semibold text-balance text-white
+                          lg:text-[32px]
+                        `}
+                    >
                         Get your cash flow forecast in 1 minute
                     </h4>
-                    <div className="flex items-start gap-32">
+                    <div className="flex flex-col items-start gap-8 lg:flex-row lg:gap-32">
                         <div className="flex flex-col gap-3">
                             {[
                                 {
@@ -34,12 +39,12 @@ export function NewsletterCta() {
                                 },
                             ].map((item) => (
                                 <div className="flex items-center gap-3" key={item.text}>
-                                    {item.icon}
+                                    <div className="shrink-0">{item.icon}</div>
                                     <p className="text-xl leading-[100%] text-gray-light">{item.text}</p>
                                 </div>
                             ))}
                         </div>
-                        <div className="flex flex-1 flex-col gap-5">
+                        <div className="flex w-full flex-1 flex-col gap-5">
                             <InputGroup>
                                 <InputGroupInput
                                     onChange={(e) => {

@@ -90,7 +90,7 @@ export const HeaderClient = ({ data, onlySeo }: HeaderClientProps) => {
                             width={160}
                         />
                     </Link>
-                    <NavigationMenu viewport={isMobile}>
+                    <NavigationMenu className="hidden lg:flex" viewport={isMobile}>
                         <NavigationMenuList>
                             {menu.map((menuItem) => {
                                 return menuItem.submenu.length > 0 ? (

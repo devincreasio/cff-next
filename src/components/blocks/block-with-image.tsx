@@ -15,8 +15,8 @@ export function BlockWithImage({ data }: BlockWithImageProps) {
     return (
         <section className="relative py-16">
             <div
-                className={cn('container mx-auto flex items-center gap-5', {
-                    'flex-row-reverse': reverse,
+                className={cn('container mx-auto flex flex-col items-center gap-5 lg:flex-row', {
+                    'lg:flex-row-reverse': reverse,
                 })}
             >
                 {ImageFile?.url && (
@@ -28,8 +28,8 @@ export function BlockWithImage({ data }: BlockWithImageProps) {
                         width={488}
                     />
                 )}
-                <div className="flex flex-col items-start gap-5 px-8">
-                    <h3 className="text-2xl leading-[140%] font-semibold">{Title}</h3>
+                <div className="flex flex-col items-start gap-5 lg:px-8">
+                    <h3 className="text-xl leading-[140%] font-semibold lg:text-2xl">{Title}</h3>
                     <p className="leading-[160%] text-text-light">{Description}</p>
                     {url && (
                         <Button asChild className="mt-7">

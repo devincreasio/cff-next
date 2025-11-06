@@ -15,9 +15,9 @@ export function Rating() {
     ]
 
     return (
-        <section className="relative z-10 container mx-auto grid grid-cols-3 gap-6 py-8">
+        <section className="relative z-10 container mx-auto grid gap-6 py-8 lg:grid-cols-3">
             {data.map((item) => (
-                <div className="flex flex-col items-center justify-center gap-2 text-center" key={item.title}>
+                <div className="flex flex-col items-center justify-center gap-2 py-6 text-center" key={item.title}>
                     <div className="flex items-center gap-3.5">
                         {Array.from({ length: 5 }).map((_, index) => (
                             <svg

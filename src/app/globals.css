@@ -34,6 +34,7 @@
 }
 
 @utility container {
+    padding-inline: 1rem;
     @media (min-width: 80rem) {
         max-width: 75rem;
     }

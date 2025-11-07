@@ -57,7 +57,7 @@ function AccordionTrigger({ children, className, ...props }: React.ComponentProp
                 {children}
                 <ChevronDownIcon
                     className={`
-                      pointer-events-none size-4 shrink-0 translate-y-0.5 text-neutral-500 transition-transform
+                      pointer-events-none size-4 shrink-0 translate-y-0.5 text-primary-200 transition-transform
                       duration-200
                     `}
                 />

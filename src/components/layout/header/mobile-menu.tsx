@@ -32,7 +32,7 @@ export default function MobileMenu({ menu }: MobileMenuProps) {
                     <MenuIcon />
                 </button>
             </SheetTrigger>
-            <SheetContent className="w-full gap-0 p-0" showClose={false} side="top">
+            <SheetContent className="max-h-[85vh] w-full gap-0 p-0" showClose={false} side="top">
                 <SheetHeader className="h-16 p-4">
                     <SheetTitle className="sr-only">Cash Flow Frog Mobile Menu</SheetTitle>
                     <div className="flex items-center justify-between">
@@ -60,19 +60,20 @@ export default function MobileMenu({ menu }: MobileMenuProps) {
                                     <AccordionItem className="border-0" value={`item-${index}`}>
                                         <AccordionTrigger
                                             className={`
-                                              px-4 py-3 text-base font-medium text-teal-900
-                                              hover:bg-teal-50 hover:no-underline
-                                              data-[state=open]:bg-teal-50/50
+                                              px-5 py-3.5 text-sm font-medium text-primary-200
+                                              hover:bg-primary-50 hover:no-underline
+                                              data-[state=open]:bg-primary-50
                                             `}
                                         >
                                             {item.title}
                                         </AccordionTrigger>
-                                        <AccordionContent className="bg-teal-50/30 pb-0">
+                                        <AccordionContent className="pb-0">
                                             {item.submenu.map((child) => (
                                                 <a
                                                     className={`
-                                                      block px-4 py-3 pl-8 text-base text-teal-800 transition-colors
-                                                      hover:bg-teal-100/50
+                                                      block px-4 py-3.5 pl-12 text-sm font-medium text-primary-200
+                                                      transition-colors
+                                                      hover:bg-primary-50
                                                     `}
                                                     href={child.href}
                                                     key={child.title}
@@ -88,8 +89,8 @@ export default function MobileMenu({ menu }: MobileMenuProps) {
                                 ) : (
                                     <a
                                         className={`
-                                          block px-4 py-3 text-base font-medium text-teal-900 transition-colors
-                                          hover:bg-teal-50
+                                          block px-5 py-3.5 text-sm font-medium text-primary-200 transition-colors
+                                          hover:bg-primary-50
                                         `}
                                         href={item.href}
                                         onClick={() => {

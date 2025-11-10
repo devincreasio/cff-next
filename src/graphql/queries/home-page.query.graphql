@@ -18,20 +18,26 @@ query GetHomePage {
         Seo {
             ...ComponentSeoSeoFragment
         }
-    }
-    features(filters: { showOnMain: { eq: true } }) {
-        CtaText
-        Description
-        ImageFile {
-            ...UploadFileFragment
+        Features {
+            Title
+            Description
+            Items {
+                Title
+                Description
+                Image {
+                    ...UploadFileFragment
+                }
+                features {
+                    Description
+                    ImageFile {
+                        ...UploadFileFragment
+                    }
+                    Link
+                    Name
+                    Slug
+                }
+            }
         }
-        Ladder {
-            ...LadderFragment
-        }
-        Link
-        Name
-        Title
-        Slug
     }
     benefits {
         Description

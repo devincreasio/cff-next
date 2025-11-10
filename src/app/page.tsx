@@ -1,8 +1,8 @@
 import { Benefits } from '@/components/blocks/benefits'
 import { BlockWithImage } from '@/components/blocks/block-with-image'
 import { Cta } from '@/components/blocks/cta'
+import Features from '@/components/blocks/features'
 import { HeroWithLottie } from '@/components/blocks/hero-with-lottie'
-import { HowItWorks } from '@/components/blocks/how-it-works'
 import { Integrations } from '@/components/blocks/integrations'
 import { NewsletterCta } from '@/components/blocks/newsletter-cta'
 import { Rating } from '@/components/blocks/rating'
@@ -10,18 +10,22 @@ import { Reviews } from '@/components/blocks/reviews'
 import { api } from '@/lib/api'
 
 export default async function Home() {
-    const data = await api.GetHomePage()
+    const { benefits, home: data } = await api.GetHomePage()
     return (
         <>
-            <HeroWithLottie description={data.home?.HeroDescription} title={data.home?.HeroTitle} />
+            <HeroWithLottie description={data?.HeroDescription} title={data?.HeroTitle} />
             <Rating />
             <Integrations />
-            <BlockWithImage data={data.home?.Ladder} />
-            <HowItWorks />
-            <BlockWithImage data={data.home?.Ladder2} />
-            <BlockWithImage data={data.home?.Ladder3} />
+            <BlockWithImage data={data?.Ladder} />
+            <Features
+                Description={data?.Features?.Description}
+                Items={data?.Features?.Items ?? []}
+                Title={data?.Features?.Title}
+            />
+            <BlockWithImage data={data?.Ladder2} />
+            <BlockWithImage data={data?.Ladder3} />
             <Benefits
-                data={data.benefits.map(
+                data={benefits.map(
                     (benefit) =>
                         benefit && {
                             description: benefit.Description ?? '',

@@ -323,6 +323,69 @@ export type ComponentFaqFaqInput = {
   id?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type ComponentFeaturesFeatureItem = {
+  __typename?: 'ComponentFeaturesFeatureItem';
+  Description?: Maybe<Scalars['String']['output']>;
+  Image?: Maybe<UploadFile>;
+  Title?: Maybe<Scalars['String']['output']>;
+  features: Array<Maybe<Feature>>;
+  features_connection?: Maybe<FeatureRelationResponseCollection>;
+  id: Scalars['ID']['output'];
+};
+
+
+export type ComponentFeaturesFeatureItemFeaturesArgs = {
+  filters?: InputMaybe<FeatureFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+export type ComponentFeaturesFeatureItemFeatures_ConnectionArgs = {
+  filters?: InputMaybe<FeatureFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentFeaturesFeatureItemFiltersInput = {
+  Description?: InputMaybe<StringFilterInput>;
+  Title?: InputMaybe<StringFilterInput>;
+  and?: InputMaybe<Array<InputMaybe<ComponentFeaturesFeatureItemFiltersInput>>>;
+  features?: InputMaybe<FeatureFiltersInput>;
+  not?: InputMaybe<ComponentFeaturesFeatureItemFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentFeaturesFeatureItemFiltersInput>>>;
+};
+
+export type ComponentFeaturesFeatureItemInput = {
+  Description?: InputMaybe<Scalars['String']['input']>;
+  Image?: InputMaybe<Scalars['ID']['input']>;
+  Title?: InputMaybe<Scalars['String']['input']>;
+  features?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export type ComponentFeaturesFeatures = {
+  __typename?: 'ComponentFeaturesFeatures';
+  Description?: Maybe<Scalars['String']['output']>;
+  Items?: Maybe<Array<Maybe<ComponentFeaturesFeatureItem>>>;
+  Title?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+};
+
+
+export type ComponentFeaturesFeaturesItemsArgs = {
+  filters?: InputMaybe<ComponentFeaturesFeatureItemFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentFeaturesFeaturesInput = {
+  Description?: InputMaybe<Scalars['String']['input']>;
+  Items?: InputMaybe<Array<InputMaybe<ComponentFeaturesFeatureItemInput>>>;
+  Title?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+};
+
 export type ComponentLadderLadderItem = {
   __typename?: 'ComponentLadderLadderItem';
   Description?: Maybe<Scalars['String']['output']>;
@@ -588,6 +651,11 @@ export type FeatureInput = {
   showOnMain?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type FeatureRelationResponseCollection = {
+  __typename?: 'FeatureRelationResponseCollection';
+  nodes: Array<Feature>;
+};
+
 export type FeaturesPage = {
   __typename?: 'FeaturesPage';
   CtaText?: Maybe<Scalars['String']['output']>;
@@ -654,7 +722,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph = AccountantsAndBookkeeper | Author | Benefit | Business | Category | ComponentAnswersAnswers | ComponentBlockWithIconIntegrationList | ComponentFaqFaq | ComponentLadderLadderItem | ComponentPeoplePeople | ComponentSeoSeo | Faq | Feature | FeaturesPage | Glossary | Home | I18NLocale | Integration | IntegrationsPage | Landing | LegalPage | Post | PostRating | PricingPage | ReviewWorkflowsWorkflow | ReviewWorkflowsWorkflowStage | Setting | Testimonial | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = AccountantsAndBookkeeper | Author | Benefit | Business | Category | ComponentAnswersAnswers | ComponentBlockWithIconIntegrationList | ComponentFaqFaq | ComponentFeaturesFeatureItem | ComponentFeaturesFeatures | ComponentLadderLadderItem | ComponentPeoplePeople | ComponentSeoSeo | Faq | Feature | FeaturesPage | Glossary | Home | I18NLocale | Integration | IntegrationsPage | Landing | LegalPage | Post | PostRating | PricingPage | ReviewWorkflowsWorkflow | ReviewWorkflowsWorkflowStage | Setting | Testimonial | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type Glossary = {
   __typename?: 'Glossary';
@@ -761,6 +829,7 @@ export type GlossaryRelationResponseCollection = {
 export type Home = {
   __typename?: 'Home';
   Faq?: Maybe<Array<Maybe<ComponentFaqFaq>>>;
+  Features?: Maybe<ComponentFeaturesFeatures>;
   FeaturesDescription?: Maybe<Scalars['String']['output']>;
   FeaturesTitle?: Maybe<Scalars['String']['output']>;
   HeroDescription?: Maybe<Scalars['String']['output']>;
@@ -786,6 +855,7 @@ export type HomeFaqArgs = {
 
 export type HomeInput = {
   Faq?: InputMaybe<Array<InputMaybe<ComponentFaqFaqInput>>>;
+  Features?: InputMaybe<ComponentFeaturesFeaturesInput>;
   FeaturesDescription?: InputMaybe<Scalars['String']['input']>;
   FeaturesTitle?: InputMaybe<Scalars['String']['input']>;
   HeroDescription?: InputMaybe<Scalars['String']['input']>;
@@ -2822,7 +2892,7 @@ export type GetHeaderDataQuery = { __typename?: 'Query', setting?: { __typename?
 export type GetHomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomePageQuery = { __typename?: 'Query', home?: { __typename?: 'Home', FeaturesDescription?: string | null, FeaturesTitle?: string | null, HeroDescription?: string | null, HeroTitle?: string | null, HeroTitleUnderline?: string | null, UnderlineLeft?: boolean | null, Ladder?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder2?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder3?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null } | null, features: Array<{ __typename?: 'Feature', CtaText?: string | null, Description?: string | null, Link?: string | null, Name?: string | null, Title?: string | null, Slug?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null } | null>, benefits: Array<{ __typename?: 'Benefit', Description?: string | null, ImageRight?: boolean | null, Name?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
+export type GetHomePageQuery = { __typename?: 'Query', home?: { __typename?: 'Home', FeaturesDescription?: string | null, FeaturesTitle?: string | null, HeroDescription?: string | null, HeroTitle?: string | null, HeroTitleUnderline?: string | null, UnderlineLeft?: boolean | null, Ladder?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder2?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder3?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Features?: { __typename?: 'ComponentFeaturesFeatures', Title?: string | null, Description?: string | null, Items?: Array<{ __typename?: 'ComponentFeaturesFeatureItem', Title?: string | null, Description?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, features: Array<{ __typename?: 'Feature', CtaText?: string | null, Description?: string | null, Link?: string | null, Name?: string | null, Title?: string | null, Slug?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> } | null> | null } | null } | null, benefits: Array<{ __typename?: 'Benefit', Description?: string | null, ImageRight?: boolean | null, Name?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
 
 export type GetIntegrationTemplateQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -3040,20 +3110,28 @@ export const GetHomePageDocument = gql`
     Seo {
       ...ComponentSeoSeoFragment
     }
-  }
-  features(filters: {showOnMain: {eq: true}}) {
-    CtaText
-    Description
-    ImageFile {
-      ...UploadFileFragment
+    Features {
+      Title
+      Description
+      Items {
+        Title
+        Description
+        Image {
+          ...UploadFileFragment
+        }
+        features {
+          CtaText
+          Description
+          ImageFile {
+            ...UploadFileFragment
+          }
+          Link
+          Name
+          Title
+          Slug
+        }
+      }
     }
-    Ladder {
-      ...LadderFragment
-    }
-    Link
-    Name
-    Title
-    Slug
   }
   benefits {
     Description

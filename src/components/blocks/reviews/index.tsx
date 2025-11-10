@@ -3,10 +3,14 @@ import { api } from '@/lib/api'
 
 import ReviewsCarousel from './reviews-carousel'
 
-export async function Reviews() {
+interface ReviewsProps {
+    backgroundColor?: 'primary-50' | 'white'
+}
+
+export async function Reviews({ backgroundColor = 'primary-50' }: ReviewsProps) {
     const data = await api.GetTestimonials()
     return (
-        <section className="relative bg-primary-50 pt-10 md:pt-20">
+        <section className={`relative pt-10 md:pt-20 ${backgroundColor === 'white' ? 'bg-white' : 'bg-primary-50'}`}>
             <BlurCircle color="green" right={120} size={500} top={109} />
             <BlurCircle color="blue" right={-87} size={591} top={390} />
             <div className="flex flex-col gap-12">

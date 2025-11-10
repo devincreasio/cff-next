@@ -33,11 +33,7 @@ export default async function Home() {
             />
             <NewsletterCta />
             <Reviews />
-            <Cta
-                buttonLink="https://accounts.cashflowfrog.com/signup?action=signup&section=cta&page=home"
-                buttonText="Start free trial now"
-                title="Trusted by thousands of business owners"
-            />
+            <Cta buttonText="Start free trial now" title="Trusted by thousands of business owners" />
         </>
     )
 }

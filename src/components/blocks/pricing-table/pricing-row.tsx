@@ -18,7 +18,7 @@ interface PricingRowProps {
 export const PricingRow = ({ item, onlyPro = false }: PricingRowProps) => {
     return (
         <tr>
-            <td className="flex items-center space-x-2 text-sm md:text-base">
+            <td className="flex items-center gap-2 py-[18px] text-sm leading-[140%] md:text-base">
                 <p>{item.title}</p>
                 <Tooltip>
                     <TooltipTrigger asChild>

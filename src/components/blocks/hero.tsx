@@ -27,21 +27,9 @@ export function Hero({ description, imageAlt, imageUrl, title }: HeroProps) {
             <BlurCircle color="blue" right={45} size={591} top={281} />
             <div className="relative z-10 container mx-auto grid gap-8 lg:grid-cols-2 lg:gap-6">
                 <div className="flex shrink-0 flex-col items-start gap-8 lg:gap-10">
-                    <div className="flex max-w-[431px] flex-col gap-6">
-                        <h1
-                            className={`
-                              text-center text-[34px] leading-[120%] font-bold text-balance
-                              lg:text-left lg:text-3.5xl
-                            `}
-                        >
-                            {title}
-                        </h1>
-                        <div
-                            className={`
-                              prose text-center leading-[160%] font-medium text-neutral-600
-                              lg:text-left lg:text-xl
-                            `}
-                        >
+                    <div className="flex w-full max-w-[431px] flex-col gap-6">
+                        <h1 className={`text-[34px] leading-[120%] font-bold text-balance lg:text-3.5xl`}>{title}</h1>
+                        <div className={`prose leading-[160%] font-medium text-neutral-600 lg:text-xl`}>
                             <Markdown>{description}</Markdown>
                         </div>
                     </div>
@@ -56,15 +44,14 @@ export function Hero({ description, imageAlt, imageUrl, title }: HeroProps) {
                     </Button>
                 </div>
                 {imageUrl && (
-                    <div className="relative">
-                        <Image
-                            alt={imageAlt ?? 'Hero Image'}
-                            className="pointer-events-none object-contain select-none"
-                            fill
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            src={imageUrl}
-                        />
-                    </div>
+                    <Image
+                        alt={imageAlt ?? 'Hero Image'}
+                        className="pointer-events-none object-contain select-none"
+                        height={400}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        src={imageUrl}
+                        width={600}
+                    />
                 )}
             </div>
         </section>

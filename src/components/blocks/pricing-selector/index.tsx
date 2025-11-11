@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { CLOUDINARY_URL } from '@/constants'
+import { ACCOUNTS_URL, CLOUDINARY_URL } from '@/constants'
 
 import { AnnualRevenueSlider } from './annual-revenue-slider'
 import { CompaniesRangeSlider } from './companies-range-slider'
@@ -57,7 +57,7 @@ export default function PricingSelector({ onClick, onlyPro = false }: PricingSel
                                     selectedPaymentPeriod,
                                 }) ?? 0
                             }
-                            url="https://accounts.cashflowfrog.com/signup?action=signup&section=pricingStandart&page=pricing"
+                            url={`${ACCOUNTS_URL}/signup?action=signup&section=pricingStandart&page=pricing`}
                         />
                     )}
                     <PricingPlanCard
@@ -76,8 +76,8 @@ export default function PricingSelector({ onClick, onlyPro = false }: PricingSel
                         }
                         url={
                             onlyPro
-                                ? 'https://accounts.cashflowfrog.com/signup?action=signup&section=pricingPro&page=accountants-and-bookkeepers'
-                                : 'https://accounts.cashflowfrog.com/signup?action=signup&section=pricingPro&page=pricing'
+                                ? `${ACCOUNTS_URL}/signup?action=signup&section=pricingPro&page=accountants-and-bookkeepers`
+                                : `${ACCOUNTS_URL}/signup?action=signup&section=pricingPro&page=pricing`
                         }
                     />
                 </div>

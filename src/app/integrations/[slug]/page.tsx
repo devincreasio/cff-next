@@ -8,12 +8,28 @@ import { Hero } from '@/components/blocks/hero'
 import { Reviews } from '@/components/blocks/reviews'
 import SingleReview from '@/components/blocks/single-review'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
+import { generateSeo } from '@/components/shared/generate-seo'
 import { Button } from '@/components/ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 import { api } from '@/lib/api'
 
-export default async function IntegrationPage({ params }: { params: Promise<{ slug: string }> }) {
+const getData = (slug: string) => api.GetIntegrationTemplate({ slug })
+
+interface IntegrationPageProps {
+    params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata({ params }: IntegrationPageProps) {
     const { slug } = await params
-    const { integrations } = await api.GetIntegrationTemplate({ slug })
+    const { integrations } = await getData(slug)
+    const [data] = integrations
+
+    return generateSeo({ pathname: `/integrations/${slug}`, seo: data?.Seo })
+}
+
+export default async function IntegrationPage({ params }: IntegrationPageProps) {
+    const { slug } = await params
+    const { integrations } = await getData(slug)
     const [data] = integrations
 
     if (!data) {
@@ -36,7 +52,7 @@ export default async function IntegrationPage({ params }: { params: Promise<{ sl
                             <div className="mb-[90px] flex items-center justify-center">
                                 <Button asChild>
                                     <a
-                                        href={`https://accounts.cashflowfrog.com/signup?action=signup&section=content&page=${data.Name}`}
+                                        href={`${ACCOUNTS_URL}/signup?action=signup&section=content&page=${data.Name}`}
                                         rel="noreferrer"
                                         target="_blank"
                                     >
@@ -53,7 +69,7 @@ export default async function IntegrationPage({ params }: { params: Promise<{ sl
             <div className="mb-[90px] flex items-center justify-center">
                 <Button asChild>
                     <a
-                        href={`https://accounts.cashflowfrog.com/signup?action=signup&section=content&page=${data.Name}`}
+                        href={`${ACCOUNTS_URL}/signup?action=signup&section=content&page=${data.Name}`}
                         rel="noreferrer"
                         target="_blank"
                     >

@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { cache, Fragment } from 'react'
 
 import { BlockWithImage } from '@/components/blocks/block-with-image'
 import { Cta } from '@/components/blocks/cta'
@@ -8,19 +8,24 @@ import PricingSelector from '@/components/blocks/pricing-selector'
 import PricingTable from '@/components/blocks/pricing-table'
 import { Rating } from '@/components/blocks/rating'
 import { Reviews } from '@/components/blocks/reviews'
+import { GenerateJsonLd } from '@/components/shared/generate-jsonld'
+import { generateSeo } from '@/components/shared/generate-seo'
 import { Button } from '@/components/ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 import { api } from '@/lib/api'
 
-export default async function AccountantsBookkeepersPage() {
-    const { accountantsAndBookkeeper: data } = await api.GetAccountantsAndBookkeepers()
+const getData = cache(() => api.GetAccountantsAndBookkeepers())
 
+export default async function AccountantsBookkeepersPage() {
+    const { accountantsAndBookkeeper: data } = await getData()
     return (
         <>
+            <GenerateJsonLd faqData={data?.Faq} seo={data?.Seo} />
             <Hero
                 buttonSlot={
                     <Button asChild variant="outline">
                         <a
-                            href="https://accounts.cashflowfrog.com/signup?action=demo&section=hero&page=AccountantsAndBookkeepers"
+                            href={`${ACCOUNTS_URL}/signup?action=demo&section=hero&page=AccountantsAndBookkeepers`}
                             rel="noreferrer"
                             target="_blank"
                         >
@@ -41,7 +46,7 @@ export default async function AccountantsBookkeepersPage() {
                             <div className="mb-[90px] flex items-center justify-center">
                                 <Button asChild>
                                     <a
-                                        href={`https://accounts.cashflowfrog.com/signup?action=signup&section=content&page=AccountantsAndBookkeepers`}
+                                        href={`${ACCOUNTS_URL}/signup?action=signup&section=content&page=AccountantsAndBookkeepers`}
                                         rel="noreferrer"
                                         target="_blank"
                                     >
@@ -65,4 +70,9 @@ export default async function AccountantsBookkeepersPage() {
             />
         </>
     )
+}
+
+export async function generateMetadata() {
+    const { accountantsAndBookkeeper: data } = await getData()
+    return generateSeo({ pathname: '/accountants-bookkeepers', seo: data?.Seo })
 }

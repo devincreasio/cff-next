@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { Button } from '@/components/ui/button'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'
-
-import { Button } from '../ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 
 export function NewsletterCta() {
     const [email, setEmail] = useState('')
@@ -86,7 +86,7 @@ export function NewsletterCta() {
                             </InputGroup>
                             <Button asChild>
                                 <Link
-                                    href={`https://accounts.cashflowfrog.com/signup?email=${email}`}
+                                    href={`${ACCOUNTS_URL}/signup?email=${email}`}
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >

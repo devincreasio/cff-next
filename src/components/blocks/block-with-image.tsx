@@ -2,10 +2,9 @@ import Markdown from 'markdown-to-jsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Button } from '@/components/ui/button'
 import { LadderFragmentFragment } from '@/graphql/generated/sdk'
 import { cn } from '@/lib/utils'
-
-import { Button } from '../ui/button'
 
 interface BlockWithImageProps {
     data?: LadderFragmentFragment | null

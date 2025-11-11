@@ -14,7 +14,7 @@ interface PaymentPeriodSelectProps {
 export function PaymentPeriodSelect({ selectedPaymentPeriod, setSelectedPaymentPeriod }: PaymentPeriodSelectProps) {
     return (
         <div className="flex flex-col gap-8">
-            <p className="text-[24px] leading-[140%] font-semibold">Select the payment period</p>
+            <p className="text-2xl leading-[140%] font-semibold">Select the payment period</p>
             <div className="flex w-full justify-around rounded-sm bg-[#F8F8F8] p-2 text-sm md:gap-2 md:text-base">
                 {paymentOptions.map(({ discount, id, label }) => {
                     const isSelected = selectedPaymentPeriod === id

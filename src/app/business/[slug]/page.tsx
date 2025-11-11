@@ -8,12 +8,21 @@ import { Hero } from '@/components/blocks/hero'
 import { Reviews } from '@/components/blocks/reviews'
 import SingleReview from '@/components/blocks/single-review'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
+import { GenerateJsonLd } from '@/components/shared/generate-jsonld'
+import { generateSeo } from '@/components/shared/generate-seo'
 import { Button } from '@/components/ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 import { api } from '@/lib/api'
 
-export default async function BusinessPage({ params }: { params: Promise<{ slug: string }> }) {
+const getData = (slug: string) => api.GetBusinessTemplate({ slug })
+
+interface BusinessPageProps {
+    params: Promise<{ slug: string }>
+}
+
+export default async function BusinessPage({ params }: BusinessPageProps) {
     const { slug } = await params
-    const { businesses } = await api.GetBusinessTemplate({ slug })
+    const { businesses } = await getData(slug)
     const [data] = businesses
 
     if (!data) {
@@ -21,6 +30,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ slug:
     }
     return (
         <>
+            <GenerateJsonLd faqData={data.Faq} seo={data.Seo} />
             <Breadcrumbs activePage={data.Name ?? ''} />
             <Hero
                 buttonText={`Get your ${data.Name}`}
@@ -36,7 +46,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ slug:
                             <div className="mb-[90px] flex items-center justify-center">
                                 <Button asChild>
                                     <a
-                                        href={`https://accounts.cashflowfrog.com/signup?action=signup&section=content&page=${data.Name}`}
+                                        href={`${ACCOUNTS_URL}/signup?action=signup&section=content&page=${data.Name}`}
                                         rel="noreferrer"
                                         target="_blank"
                                     >
@@ -53,7 +63,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ slug:
             <div className="mb-[90px] flex items-center justify-center">
                 <Button asChild>
                     <a
-                        href={`https://accounts.cashflowfrog.com/signup?action=signup&section=content&page=${data.Name}`}
+                        href={`${ACCOUNTS_URL}/signup?action=signup&section=content&page=${data.Name}`}
                         rel="noreferrer"
                         target="_blank"
                     >
@@ -65,10 +75,18 @@ export default async function BusinessPage({ params }: { params: Promise<{ slug:
             <Faq data={data.Faq ?? []} />
             <Cta
                 backgroundColor="primary-50"
-                buttonLink={`https://accounts.cashflowfrog.com/signup?action=signup&section=cta&page=${data.Name}`}
+                buttonLink={`${ACCOUNTS_URL}/signup?action=signup&section=cta&page=${data.Name}`}
                 buttonText="Start free"
                 title={`Get more out of ${data.Name}`}
             />
         </>
     )
+}
+
+export async function generateMetadata({ params }: BusinessPageProps) {
+    const { slug } = await params
+    const { businesses } = await getData(slug)
+    const [data] = businesses
+
+    return generateSeo({ pathname: `/business/${slug}`, seo: data?.Seo })
 }

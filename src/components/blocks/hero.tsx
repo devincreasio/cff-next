@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 
 import { BlurCircle } from '../shared/blur-circle'
 
@@ -39,7 +40,7 @@ export function Hero({ buttonSlot, buttonText = 'Start free', description, image
                     <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-5">
                         <Button asChild className="w-full lg:w-auto" variant="default">
                             <a
-                                href={`https://accounts.cashflowfrog.com/signup?action=signup&section=hero&page=${page}`}
+                                href={`${ACCOUNTS_URL}/signup?action=signup&section=hero&page=${page}`}
                                 rel="noreferrer"
                                 target="_blank"
                             >

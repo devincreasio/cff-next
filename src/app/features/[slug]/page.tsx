@@ -8,12 +8,21 @@ import Faq from '@/components/blocks/faq'
 import { Hero } from '@/components/blocks/hero'
 import SingleReview from '@/components/blocks/single-review'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
+import { GenerateJsonLd } from '@/components/shared/generate-jsonld'
+import { generateSeo } from '@/components/shared/generate-seo'
 import { Button } from '@/components/ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 import { api } from '@/lib/api'
 
-export default async function FeaturePage({ params }: { params: Promise<{ slug: string }> }) {
+interface FeaturePageProps {
+    params: Promise<{ slug: string }>
+}
+
+const getData = (slug: string) => api.GetFeaturesTemplate({ slug })
+
+export default async function FeaturePage({ params }: FeaturePageProps) {
     const { slug } = await params
-    const { features } = await api.GetFeaturesTemplate({ slug })
+    const { features } = await getData(slug)
     const [data] = features
 
     if (!data) {
@@ -21,6 +30,7 @@ export default async function FeaturePage({ params }: { params: Promise<{ slug: 
     }
     return (
         <>
+            <GenerateJsonLd faqData={data.Faq} seo={data.Seo} />
             <Breadcrumbs activePage={data.Name ?? ''} pages={[{ href: '/features', name: 'Features' }]} />
             <Hero
                 buttonText={`Get your ${data.Name}`}
@@ -36,7 +46,7 @@ export default async function FeaturePage({ params }: { params: Promise<{ slug: 
                             <div className="mb-[90px] flex items-center justify-center">
                                 <Button asChild>
                                     <a
-                                        href={`https://accounts.cashflowfrog.com/signup?action=signup&section=content&page=${data.Name}`}
+                                        href={`${ACCOUNTS_URL}/signup?action=signup&section=content&page=${data.Name}`}
                                         rel="noreferrer"
                                         target="_blank"
                                     >
@@ -53,7 +63,7 @@ export default async function FeaturePage({ params }: { params: Promise<{ slug: 
             <div className="mb-[90px] flex items-center justify-center">
                 <Button asChild>
                     <a
-                        href={`https://accounts.cashflowfrog.com/signup?action=signup&section=content&page=${data.Name}`}
+                        href={`${ACCOUNTS_URL}/signup?action=signup&section=content&page=${data.Name}`}
                         rel="noreferrer"
                         target="_blank"
                     >
@@ -75,4 +85,12 @@ export default async function FeaturePage({ params }: { params: Promise<{ slug: 
             />
         </>
     )
+}
+
+export async function generateMetadata({ params }: FeaturePageProps) {
+    const { slug } = await params
+    const { features } = await getData(slug)
+    const [data] = features
+
+    return generateSeo({ pathname: `/features/${slug}`, seo: data?.Seo })
 }

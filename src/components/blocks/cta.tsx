@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+import { Button } from '@/components/ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 import { cn } from '@/lib/utils'
-
-import { Button } from '../ui/button'
 
 interface CtaProps {
     backgroundColor?: 'primary-50' | 'white'
@@ -40,12 +40,7 @@ export function Cta({ backgroundColor = 'white', buttonLink, buttonText, title }
                     {title}
                 </h4>
                 <Button asChild>
-                    <Link
-                        href={
-                            buttonLink ??
-                            `https://accounts.cashflowfrog.com/signup?action=signup&section=cta&page=${page}`
-                        }
-                    >
+                    <Link href={buttonLink ?? `${ACCOUNTS_URL}/signup?action=signup&section=cta&page=${page}`}>
                         {buttonText}
                     </Link>
                 </Button>

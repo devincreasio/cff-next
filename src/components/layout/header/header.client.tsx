@@ -14,7 +14,7 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-import { CLOUDINARY_URL } from '@/constants'
+import { ACCOUNTS_URL, CLOUDINARY_URL } from '@/constants'
 import { GetHeaderDataQuery } from '@/graphql/generated/sdk'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
@@ -61,7 +61,7 @@ export const HeaderClient = ({ data, onlySeo }: HeaderClientProps) => {
             title: 'Accountants & Bookkeepers',
         },
         {
-            href: '/business',
+            href: '#',
             showSeeAll: false,
             submenu: data.businesses.map((business) => ({
                 href: `/business/${business?.Slug}`,
@@ -130,10 +130,7 @@ export const HeaderClient = ({ data, onlySeo }: HeaderClientProps) => {
                     <div className="flex items-center gap-6">
                         <a
                             className="group hidden text-primary-200 hover:text-primary-300 md:block"
-                            href={`https://accounts.cashflowfrog.com/login?section=header&page=${pathname.replaceAll(
-                                '/',
-                                '',
-                            )}`}
+                            href={`${ACCOUNTS_URL}/login?section=header&page=${pathname.replaceAll('/', '')}`}
                             rel="noreferrer"
                             target="_blank"
                         >
@@ -141,7 +138,7 @@ export const HeaderClient = ({ data, onlySeo }: HeaderClientProps) => {
                         </a>
                         <Button asChild className="hidden px-9 shadow-none! md:block" size="sm" variant="outline">
                             <Link
-                                href={`https://accounts.cashflowfrog.com/signup?action=signup&section=header&page=${pathname.replaceAll(
+                                href={`${ACCOUNTS_URL}/signup?action=signup&section=header&page=${pathname.replaceAll(
                                     '/',
                                     '',
                                 )}`}

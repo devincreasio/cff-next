@@ -27,7 +27,7 @@ export function PricingPlanCard({ description, imageUrl, onClick, planName, pric
                             ${price}
                             <span className="text-base font-normal text-neutral-600">/month</span>
                         </p>
-                        <p className="text-[24px] leading-[140%] font-semibold">{planName}</p>
+                        <p className="text-2xl leading-[140%] font-semibold">{planName}</p>
                     </div>
                     <Image alt="Standard" height={100} loading="lazy" src={imageUrl} width={94} />
                 </div>

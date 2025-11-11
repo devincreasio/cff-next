@@ -82,7 +82,7 @@ export function Footer() {
 
     return (
         <>
-            <footer className="relative z-10 bg-brown-background text-white">
+            <footer className="relative z-50 bg-brown-background text-white">
                 <div
                     className={`container mx-auto flex flex-col gap-y-8 pt-16 pb-14 md:flex-row md:gap-x-20 md:gap-y-0`}
                 >

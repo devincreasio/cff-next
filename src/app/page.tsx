@@ -1,3 +1,5 @@
+import { cache } from 'react'
+
 import { Benefits } from '@/components/blocks/benefits'
 import { BlockWithImage } from '@/components/blocks/block-with-image'
 import { Cta } from '@/components/blocks/cta'
@@ -7,12 +9,22 @@ import { Integrations } from '@/components/blocks/integrations'
 import { NewsletterCta } from '@/components/blocks/newsletter-cta'
 import { Rating } from '@/components/blocks/rating'
 import { Reviews } from '@/components/blocks/reviews'
+import { GenerateJsonLd } from '@/components/shared/generate-jsonld'
+import { generateSeo } from '@/components/shared/generate-seo'
 import { api } from '@/lib/api'
 
+const getData = cache(() => api.GetHomePage())
+
+export async function generateMetadata() {
+    const { home: data } = await getData()
+    return generateSeo({ pathname: '/', seo: data?.Seo })
+}
+
 export default async function Home() {
-    const { benefits, home: data } = await api.GetHomePage()
+    const { benefits, home: data } = await getData()
     return (
         <>
+            <GenerateJsonLd seo={data?.Seo} showJsonLdOrganization={true} showJsonLdWebpage={false} />
             <HeroWithLottie description={data?.HeroDescription} title={data?.HeroTitle} />
             <Rating />
             <Integrations />

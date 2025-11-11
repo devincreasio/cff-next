@@ -11,7 +11,7 @@ interface AnnualRevenueSliderProps {
 export function AnnualRevenueSlider({ annualRevenue, setAnnualRevenue }: AnnualRevenueSliderProps) {
     return (
         <div className="flex flex-col">
-            <p className="mb-16 text-[24px] leading-[140%] font-semibold">Select your annual revenue</p>
+            <p className="mb-16 text-2xl leading-[140%] font-semibold">Select your annual revenue</p>
             <div className="relative flex w-full flex-col items-center">
                 <SliderPrimitive.Root
                     className="relative flex w-full touch-none items-center select-none"

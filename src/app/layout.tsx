@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 
 import { Layout } from '@/components/layout'
+import { SITE_URL } from '@/constants'
 
 import './globals.css'
 
@@ -15,7 +16,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
     description: 'Cash Flow Frog',
     openGraph: {
-        url: 'https://cashflowfrog.com',
+        url: SITE_URL,
     },
     title: {
         absolute: 'Cash Flow Frog',

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import { CLOUDINARY_URL } from '@/constants'
 import { cn } from '@/lib/utils'
 
 interface IntegrationsProps {
@@ -27,31 +28,31 @@ export function Integrations({ backgroundColor = 'white' }: IntegrationsProps) {
                     <Image
                         alt="Xero"
                         height={80}
-                        src="https://res.cloudinary.com/cashflowfrog-com/image/upload/v1747831325/strapi/Xero_Outline_d2ddfa0bb3.svg"
+                        src={`${CLOUDINARY_URL}/v1747831325/strapi/Xero_Outline_d2ddfa0bb3.svg`}
                         width={80}
                     />
                     <Image
                         alt="QuickBooks"
                         height={64}
-                        src="https://res.cloudinary.com/cashflowfrog-com/image/upload/v1759930010/strapi/qb_logo_preferred_and_alternate_photo_2_d4249a7018.png"
+                        src={`${CLOUDINARY_URL}/v1759930010/strapi/qb_logo_preferred_and_alternate_photo_2_d4249a7018.png`}
                         width={176}
                     />
                     <Image
                         alt="Sage"
                         height={64}
-                        src="https://res.cloudinary.com/cashflowfrog-com/image/upload/v1759930010/strapi/Auto_Layout_Vertical_1cdab4dbdb.png"
+                        src={`${CLOUDINARY_URL}/v1759930010/strapi/Auto_Layout_Vertical_1cdab4dbdb.png`}
                         width={100}
                     />
                     <Image
                         alt="Zoho"
                         height={54}
-                        src="https://res.cloudinary.com/cashflowfrog-com/image/upload/v1759930010/strapi/zoho_books_seeklogo_1_40da41070a.png"
+                        src={`${CLOUDINARY_URL}/v1759930010/strapi/zoho_books_seeklogo_1_40da41070a.png`}
                         width={157}
                     />
                     <Image
                         alt="FreshBooks"
                         height={54}
-                        src="https://res.cloudinary.com/cashflowfrog-com/image/upload/v1759930010/strapi/Fresh_Books_logo_2020_1_65bc0ac6d5.png"
+                        src={`${CLOUDINARY_URL}/v1759930010/strapi/Fresh_Books_logo_2020_1_65bc0ac6d5.png`}
                         width={220}
                     />
                 </div>

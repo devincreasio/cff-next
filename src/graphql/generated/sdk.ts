@@ -2872,6 +2872,11 @@ export type GetBusinessTemplateQueryVariables = Exact<{
 
 export type GetBusinessTemplateQuery = { __typename?: 'Query', businesses: Array<{ __typename?: 'Business', Name?: string | null, Title?: string | null, TitleUnderline?: string | null, UnderlineLeft?: boolean | null, Description?: string | null, AboutTitle?: string | null, AboutDescription?: string | null, Slug?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
 
+export type GetAllFaqsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllFaqsQuery = { __typename?: 'Query', faqs: Array<{ __typename?: 'Faq', Answer?: string | null, Question?: string | null, documentId: string } | null> };
+
 export type GetFeaturesTemplateQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
@@ -2892,7 +2897,7 @@ export type GetHeaderDataQuery = { __typename?: 'Query', setting?: { __typename?
 export type GetHomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomePageQuery = { __typename?: 'Query', home?: { __typename?: 'Home', FeaturesDescription?: string | null, FeaturesTitle?: string | null, HeroDescription?: string | null, HeroTitle?: string | null, HeroTitleUnderline?: string | null, UnderlineLeft?: boolean | null, Ladder?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder2?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder3?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Features?: { __typename?: 'ComponentFeaturesFeatures', Title?: string | null, Description?: string | null, Items?: Array<{ __typename?: 'ComponentFeaturesFeatureItem', Title?: string | null, Description?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, features: Array<{ __typename?: 'Feature', CtaText?: string | null, Description?: string | null, Link?: string | null, Name?: string | null, Title?: string | null, Slug?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> } | null> | null } | null } | null, benefits: Array<{ __typename?: 'Benefit', Description?: string | null, ImageRight?: boolean | null, Name?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
+export type GetHomePageQuery = { __typename?: 'Query', home?: { __typename?: 'Home', FeaturesDescription?: string | null, FeaturesTitle?: string | null, HeroDescription?: string | null, HeroTitle?: string | null, HeroTitleUnderline?: string | null, UnderlineLeft?: boolean | null, Ladder?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder2?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder3?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Features?: { __typename?: 'ComponentFeaturesFeatures', Title?: string | null, Description?: string | null, Items?: Array<{ __typename?: 'ComponentFeaturesFeatureItem', Title?: string | null, Description?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, features: Array<{ __typename?: 'Feature', Description?: string | null, Link?: string | null, Name?: string | null, Slug?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> } | null> | null } | null } | null, benefits: Array<{ __typename?: 'Benefit', Description?: string | null, ImageRight?: boolean | null, Name?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
 
 export type GetIntegrationTemplateQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -3002,6 +3007,15 @@ export const GetBusinessTemplateDocument = gql`
     ${UploadFileFragmentFragmentDoc}
 ${LadderFragmentFragmentDoc}
 ${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetAllFaqsDocument = gql`
+    query getAllFaqs {
+  faqs {
+    Answer
+    Question
+    documentId
+  }
+}
+    `;
 export const GetFeaturesTemplateDocument = gql`
     query GetFeaturesTemplate($slug: String!) {
   features(filters: {Slug: {eq: $slug}}) {
@@ -3120,14 +3134,12 @@ export const GetHomePageDocument = gql`
           ...UploadFileFragment
         }
         features {
-          CtaText
           Description
           ImageFile {
             ...UploadFileFragment
           }
           Link
           Name
-          Title
           Slug
         }
       }
@@ -3264,6 +3276,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     GetBusinessTemplate(variables: GetBusinessTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetBusinessTemplateQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetBusinessTemplateQuery>({ document: GetBusinessTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetBusinessTemplate', 'query', variables);
+    },
+    getAllFaqs(variables?: GetAllFaqsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetAllFaqsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetAllFaqsQuery>({ document: GetAllFaqsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'getAllFaqs', 'query', variables);
     },
     GetFeaturesTemplate(variables: GetFeaturesTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeaturesTemplateQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetFeaturesTemplateQuery>({ document: GetFeaturesTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetFeaturesTemplate', 'query', variables);

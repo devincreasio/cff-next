@@ -4,6 +4,7 @@ import Markdown from 'markdown-to-jsx'
 import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
+import { ACCOUNTS_URL } from '@/constants'
 
 import { BlurCircle } from '../shared/blur-circle'
 
@@ -39,7 +40,7 @@ export function HeroWithLottie({ description, title }: HeroWithLottieProps) {
                     </div>
                     <Button asChild className="w-full lg:w-auto" variant="default">
                         <a
-                            href={`https://accounts.cashflowfrog.com/signup?action=signup&section=hero&page=${pathname}`}
+                            href={`${ACCOUNTS_URL}/signup?action=signup&section=hero&page=${pathname}`}
                             rel="noreferrer"
                             target="_blank"
                         >

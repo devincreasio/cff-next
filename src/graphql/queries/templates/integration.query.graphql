@@ -29,3 +29,11 @@ query GetIntegrationTemplate($slug: String!) {
         }
     }
 }
+
+query GetIntegrationTemplateSlugs {
+    integrations(pagination: { limit: 1000 }) {
+        Slug
+        createdAt
+        updatedAt
+    }
+}

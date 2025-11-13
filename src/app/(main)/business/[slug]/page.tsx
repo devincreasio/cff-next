@@ -92,3 +92,13 @@ export async function generateMetadata({ params }: BusinessPageProps) {
 
     return generateSeo({ pathname: `/business/${slug}`, seo: data?.Seo })
 }
+
+export async function generateStaticParams() {
+    const { businesses } = await api.GetBusinessTemplateSlugs()
+    return businesses.map((business) => {
+        if (!business?.Slug) return null
+        return {
+            slug: business.Slug,
+        }
+    })
+}

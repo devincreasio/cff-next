@@ -23,3 +23,11 @@ query GetBusinessTemplate($slug: String!) {
         }
     }
 }
+
+query GetBusinessTemplateSlugs {
+    businesses(pagination: { limit: 1000 }) {
+        Slug
+        createdAt
+        updatedAt
+    }
+}

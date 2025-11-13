@@ -24,6 +24,16 @@ export async function generateMetadata({ params }: LegalPageTemplateProps) {
     return generateSeo({ pathname: `/${slug}`, seo: data?.SEO })
 }
 
+export async function generateStaticParams() {
+    const { legalPages } = await api.GetLegalPageTemplateSlugs()
+    return legalPages.map((legalPage) => {
+        if (!legalPage?.Slug) return null
+        return {
+            slug: legalPage.Slug,
+        }
+    })
+}
+
 export default async function LegalPageTemplate({ params }: LegalPageTemplateProps) {
     const { slug } = await params
     const { legalPages } = await getData(slug)

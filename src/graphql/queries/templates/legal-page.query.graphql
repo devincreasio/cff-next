@@ -13,3 +13,11 @@ query GetLegalPageTemplate($slug: String!) {
         robotsIndex
     }
 }
+
+query GetLegalPageTemplateSlugs {
+    legalPages(pagination: { limit: 1000 }) {
+        Slug
+        createdAt
+        updatedAt
+    }
+}

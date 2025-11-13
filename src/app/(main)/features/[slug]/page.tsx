@@ -96,3 +96,13 @@ export async function generateMetadata({ params }: FeaturePageProps) {
 
     return generateSeo({ pathname: `/features/${slug}`, seo: data?.Seo })
 }
+
+export async function generateStaticParams() {
+    const { features } = await api.GetFeaturesTemplateSlugs()
+    return features.map((feature) => {
+        if (!feature?.Slug) return null
+        return {
+            slug: feature.Slug,
+        }
+    })
+}

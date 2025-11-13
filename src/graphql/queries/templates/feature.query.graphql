@@ -29,3 +29,11 @@ query GetFeaturesTemplate($slug: String!) {
         }
     }
 }
+
+query GetFeaturesTemplateSlugs {
+    features(pagination: { limit: 1000 }) {
+        Slug
+        createdAt
+        updatedAt
+    }
+}

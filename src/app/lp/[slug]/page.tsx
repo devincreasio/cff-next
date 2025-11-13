@@ -31,6 +31,16 @@ export async function generateMetadata({ params }: LandingPageTemplateProps) {
     return generateSeo({ noFollow: true, noIndex: true, pathname: `/lp/${slug}`, seo: data?.Seo })
 }
 
+export async function generateStaticParams() {
+    const { landings } = await api.GetLandingPageTemplateSlugs()
+    return landings.map((landing) => {
+        if (!landing?.Slug) return null
+        return {
+            slug: landing.Slug,
+        }
+    })
+}
+
 export default async function LandingPageTemplate({ params }: LandingPageTemplateProps) {
     const { slug } = await params
     const { landings } = await getData(slug)

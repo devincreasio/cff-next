@@ -25,3 +25,11 @@ query GetLandingPageTemplate($slug: String!) {
         }
     }
 }
+
+query GetLandingPageTemplateSlugs {
+    landings(pagination: { limit: 1000 }) {
+        Slug
+        createdAt
+        updatedAt
+    }
+}

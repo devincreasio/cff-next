@@ -116,3 +116,13 @@ export async function generateMetadata({ params }: BlogPageProps) {
 
     return generateSeo({ pathname: `/blog/${slug}`, seo: post?.Seo })
 }
+
+export async function generateStaticParams() {
+    const { posts } = await api.GetBlogPageArticlesSlugs()
+    return posts.map((post) => {
+        if (!post?.Slug) return null
+        return {
+            slug: post.Slug,
+        }
+    })
+}

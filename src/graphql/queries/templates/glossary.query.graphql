@@ -28,3 +28,11 @@ query GetGlossaryTemplate($slug: String!) {
         }
     }
 }
+
+query GetGlossaryTemplateSlugs {
+    glossaries(pagination: { limit: 1000 }) {
+        Slug
+        createdAt
+        updatedAt
+    }
+}

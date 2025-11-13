@@ -39,3 +39,11 @@ query GetPostPage($slug: String!) {
         ...PostFragment
     }
 }
+
+query GetBlogPageArticlesSlugs {
+    posts(status: PUBLISHED, pagination: { limit: 1000 }) {
+        Slug
+        updatedAt
+        createdAt
+    }
+}

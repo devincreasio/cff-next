@@ -2875,24 +2875,10 @@ export type GetBlogPageArticlesQueryVariables = Exact<{
 
 export type GetBlogPageArticlesQuery = { __typename?: 'Query', posts_connection?: { __typename?: 'PostEntityResponseCollection', nodes: Array<{ __typename?: 'Post', documentId: string, Content?: string | null, Slug?: string | null, Title: string, publishedAt?: string | null, updatedAt?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, category?: { __typename?: 'Category', category?: string | null, color?: string | null } | null }>, pageInfo: { __typename?: 'Pagination', page: number, pageCount: number, pageSize: number, total: number } } | null };
 
-export type GetBusinessTemplateQueryVariables = Exact<{
-  slug: Scalars['String']['input'];
-}>;
-
-
-export type GetBusinessTemplateQuery = { __typename?: 'Query', businesses: Array<{ __typename?: 'Business', Name?: string | null, Title?: string | null, TitleUnderline?: string | null, UnderlineLeft?: boolean | null, Description?: string | null, AboutTitle?: string | null, AboutDescription?: string | null, Slug?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
-
 export type GetAllFaqsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllFaqsQuery = { __typename?: 'Query', faqs: Array<{ __typename?: 'Faq', Answer?: string | null, Question?: string | null, documentId: string } | null> };
-
-export type GetFeaturesTemplateQueryVariables = Exact<{
-  slug: Scalars['String']['input'];
-}>;
-
-
-export type GetFeaturesTemplateQuery = { __typename?: 'Query', features: Array<{ __typename?: 'Feature', SingleTitle?: string | null, SingleDescription?: string | null, SingleTitleUnderline?: string | null, UnderlineLeft?: boolean | null, Slug?: string | null, Name?: string | null, CtaText?: string | null, AnswersTitle?: string | null, AnswersInfo?: string | null, AnswersDescription?: string | null, SingleImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Answers?: Array<{ __typename?: 'ComponentAnswersAnswers', AnswerTitle?: string | null, AnswerLink?: string | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
 
 export type GetFeaturesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2904,13 +2890,6 @@ export type GetGlossaryPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetGlossaryPageQuery = { __typename?: 'Query', glossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string } | null> };
 
-export type GetGlossaryTemplateQueryVariables = Exact<{
-  slug: Scalars['String']['input'];
-}>;
-
-
-export type GetGlossaryTemplateQuery = { __typename?: 'Query', glossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string, ShortDescription?: string | null, PageTitle?: string | null, PageDescription?: string | null, publishedAt?: string | null, updatedAt?: string | null, Content?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, relatedGlossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string, ShortDescription?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> } | null> };
-
 export type GetHeaderDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -2921,6 +2900,52 @@ export type GetHomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetHomePageQuery = { __typename?: 'Query', home?: { __typename?: 'Home', FeaturesDescription?: string | null, FeaturesTitle?: string | null, HeroDescription?: string | null, HeroTitle?: string | null, HeroTitleUnderline?: string | null, UnderlineLeft?: boolean | null, Ladder?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder2?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Ladder3?: { __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Features?: { __typename?: 'ComponentFeaturesFeatures', Title?: string | null, Description?: string | null, Items?: Array<{ __typename?: 'ComponentFeaturesFeatureItem', Title?: string | null, Description?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, features: Array<{ __typename?: 'Feature', Description?: string | null, Link?: string | null, Name?: string | null, Slug?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> } | null> | null } | null } | null, benefits: Array<{ __typename?: 'Benefit', Description?: string | null, ImageRight?: boolean | null, Name?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
 
+export type GetIntegrationPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetIntegrationPageQuery = { __typename?: 'Query', integrationsPage?: { __typename?: 'IntegrationsPage', IntegrationDescription?: string | null, IntegrationTitle?: string | null, Title?: string | null, TitleUnderline?: string | null, UnderlineLeft?: boolean | null, Description?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null } | null, integrations: Array<{ __typename?: 'Integration', Description?: string | null, Name?: string | null, Slug?: string | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
+
+export type GetPricingPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPricingPageQuery = { __typename?: 'Query', pricingPage?: { __typename?: 'PricingPage', Title?: string | null, TitleUnderline?: string | null, Description?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, PricingFaq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null, id: string } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null } | null };
+
+export type GetBusinessTemplateQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetBusinessTemplateQuery = { __typename?: 'Query', businesses: Array<{ __typename?: 'Business', Name?: string | null, Title?: string | null, TitleUnderline?: string | null, UnderlineLeft?: boolean | null, Description?: string | null, AboutTitle?: string | null, AboutDescription?: string | null, Slug?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
+
+export type GetBusinessTemplateSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetBusinessTemplateSlugsQuery = { __typename?: 'Query', businesses: Array<{ __typename?: 'Business', Slug?: string | null, createdAt?: string | null, updatedAt?: string | null } | null> };
+
+export type GetFeaturesTemplateQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetFeaturesTemplateQuery = { __typename?: 'Query', features: Array<{ __typename?: 'Feature', SingleTitle?: string | null, SingleDescription?: string | null, SingleTitleUnderline?: string | null, UnderlineLeft?: boolean | null, Slug?: string | null, Name?: string | null, CtaText?: string | null, AnswersTitle?: string | null, AnswersInfo?: string | null, AnswersDescription?: string | null, SingleImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Answers?: Array<{ __typename?: 'ComponentAnswersAnswers', AnswerTitle?: string | null, AnswerLink?: string | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
+
+export type GetFeaturesTemplateSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeaturesTemplateSlugsQuery = { __typename?: 'Query', features: Array<{ __typename?: 'Feature', Slug?: string | null, createdAt?: string | null, updatedAt?: string | null } | null> };
+
+export type GetGlossaryTemplateQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetGlossaryTemplateQuery = { __typename?: 'Query', glossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string, ShortDescription?: string | null, PageTitle?: string | null, PageDescription?: string | null, publishedAt?: string | null, updatedAt?: string | null, Content?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, relatedGlossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string, ShortDescription?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> } | null> };
+
+export type GetGlossaryTemplateSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetGlossaryTemplateSlugsQuery = { __typename?: 'Query', glossaries: Array<{ __typename?: 'Glossary', Slug: string, createdAt?: string | null, updatedAt?: string | null } | null> };
+
 export type GetIntegrationTemplateQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
@@ -2928,10 +2953,10 @@ export type GetIntegrationTemplateQueryVariables = Exact<{
 
 export type GetIntegrationTemplateQuery = { __typename?: 'Query', integrations: Array<{ __typename?: 'Integration', Name?: string | null, SingleAboutTitle?: string | null, SingleAboutDescription?: string | null, SingleDescription?: string | null, SingleTitle?: string | null, SingleUnderlineTitle?: string | null, UnderlineLeft?: boolean | null, Slug?: string | null, SingleFirstIconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, SingleHeroFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, SingleLadder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, SingleSecondIconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null } | null> };
 
-export type GetIntegrationPageQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetIntegrationTemplateSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetIntegrationPageQuery = { __typename?: 'Query', integrationsPage?: { __typename?: 'IntegrationsPage', IntegrationDescription?: string | null, IntegrationTitle?: string | null, Title?: string | null, TitleUnderline?: string | null, UnderlineLeft?: boolean | null, Description?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null } | null, integrations: Array<{ __typename?: 'Integration', Description?: string | null, Name?: string | null, Slug?: string | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
+export type GetIntegrationTemplateSlugsQuery = { __typename?: 'Query', integrations: Array<{ __typename?: 'Integration', Slug?: string | null, createdAt?: string | null, updatedAt?: string | null } | null> };
 
 export type GetLandingPageTemplateQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -2940,12 +2965,22 @@ export type GetLandingPageTemplateQueryVariables = Exact<{
 
 export type GetLandingPageTemplateQuery = { __typename?: 'Query', landings: Array<{ __typename?: 'Landing', Slug?: string | null, template?: Enum_Landing_Template | null, SubTitle?: string | null, Title?: string | null, TitleUnderline?: string | null, Description?: string | null, showPrice: boolean, showFooter?: boolean | null, customUrlQuery?: string | null, customButtonText?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
 
+export type GetLandingPageTemplateSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetLandingPageTemplateSlugsQuery = { __typename?: 'Query', landings: Array<{ __typename?: 'Landing', Slug?: string | null, createdAt?: string | null, updatedAt?: string | null } | null> };
+
 export type GetLegalPageTemplateQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
 export type GetLegalPageTemplateQuery = { __typename?: 'Query', legalPages: Array<{ __typename?: 'LegalPage', Slug?: string | null, Name: string, content?: string | null, robotsIndex?: boolean | null, SEO?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
+
+export type GetLegalPageTemplateSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetLegalPageTemplateSlugsQuery = { __typename?: 'Query', legalPages: Array<{ __typename?: 'LegalPage', Slug?: string | null, createdAt?: string | null, updatedAt?: string | null } | null> };
 
 export type GetPostPageQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -2954,10 +2989,10 @@ export type GetPostPageQueryVariables = Exact<{
 
 export type GetPostPageQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', documentId: string, Content?: string | null, Slug?: string | null, Title: string, publishedAt?: string | null, updatedAt?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, author?: { __typename?: 'Author', Name?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, category?: { __typename?: 'Category', color?: string | null, category?: string | null } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, rating: Array<{ __typename?: 'PostRating', user: string, rating: number } | null>, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null>, relatedPosts: Array<{ __typename?: 'Post', documentId: string, Content?: string | null, Slug?: string | null, Title: string, publishedAt?: string | null, updatedAt?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, category?: { __typename?: 'Category', category?: string | null, color?: string | null } | null } | null> };
 
-export type GetPricingPageQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetBlogPageArticlesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPricingPageQuery = { __typename?: 'Query', pricingPage?: { __typename?: 'PricingPage', Title?: string | null, TitleUnderline?: string | null, Description?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, PricingFaq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null, id: string } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null } | null };
+export type GetBlogPageArticlesSlugsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', Slug?: string | null, updatedAt?: string | null, createdAt?: string | null } | null> };
 
 export type GetTestimonialsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3062,35 +3097,6 @@ export const GetBlogPageArticlesDocument = gql`
   }
 }
     ${PostFragmentFragmentDoc}`;
-export const GetBusinessTemplateDocument = gql`
-    query GetBusinessTemplate($slug: String!) {
-  businesses(filters: {Slug: {eq: $slug}}) {
-    Name
-    Title
-    TitleUnderline
-    UnderlineLeft
-    Description
-    HeroImageFile {
-      ...UploadFileFragment
-    }
-    Ladder {
-      ...LadderFragment
-    }
-    AboutTitle
-    AboutDescription
-    Slug
-    Seo {
-      ...ComponentSeoSeoFragment
-    }
-    Faq {
-      Answer
-      Question
-    }
-  }
-}
-    ${UploadFileFragmentFragmentDoc}
-${LadderFragmentFragmentDoc}
-${ComponentSeoSeoFragmentFragmentDoc}`;
 export const GetAllFaqsDocument = gql`
     query getAllFaqs {
   faqs {
@@ -3100,41 +3106,6 @@ export const GetAllFaqsDocument = gql`
   }
 }
     `;
-export const GetFeaturesTemplateDocument = gql`
-    query GetFeaturesTemplate($slug: String!) {
-  features(filters: {Slug: {eq: $slug}}) {
-    SingleTitle
-    SingleDescription
-    SingleImageFile {
-      ...UploadFileFragment
-    }
-    SingleTitleUnderline
-    UnderlineLeft
-    Slug
-    Name
-    Ladder {
-      ...LadderFragment
-    }
-    CtaText
-    AnswersTitle
-    AnswersInfo
-    AnswersDescription
-    Answers {
-      AnswerTitle
-      AnswerLink
-    }
-    Seo {
-      ...ComponentSeoSeoFragment
-    }
-    Faq {
-      Answer
-      Question
-    }
-  }
-}
-    ${UploadFileFragmentFragmentDoc}
-${LadderFragmentFragmentDoc}
-${ComponentSeoSeoFragmentFragmentDoc}`;
 export const GetFeaturesPageDocument = gql`
     query GetFeaturesPage {
   featuresPage {
@@ -3174,39 +3145,6 @@ export const GetGlossaryPageDocument = gql`
   }
 }
     `;
-export const GetGlossaryTemplateDocument = gql`
-    query GetGlossaryTemplate($slug: String!) {
-  glossaries(filters: {Slug: {eq: $slug}}) {
-    Slug
-    Name
-    ShortDescription
-    PageTitle
-    PageDescription
-    publishedAt
-    updatedAt
-    Content
-    Image {
-      ...UploadFileFragment
-    }
-    Seo {
-      ...ComponentSeoSeoFragment
-    }
-    Faq {
-      Answer
-      Question
-    }
-    relatedGlossaries {
-      Slug
-      Name
-      ShortDescription
-      Image {
-        ...UploadFileFragment
-      }
-    }
-  }
-}
-    ${UploadFileFragmentFragmentDoc}
-${ComponentSeoSeoFragmentFragmentDoc}`;
 export const GetHeaderDataDocument = gql`
     query GetHeaderData {
   setting {
@@ -3282,41 +3220,6 @@ export const GetHomePageDocument = gql`
     ${LadderFragmentFragmentDoc}
 ${ComponentSeoSeoFragmentFragmentDoc}
 ${UploadFileFragmentFragmentDoc}`;
-export const GetIntegrationTemplateDocument = gql`
-    query GetIntegrationTemplate($slug: String!) {
-  integrations(filters: {Slug: {eq: $slug}}) {
-    Name
-    SingleAboutTitle
-    SingleAboutDescription
-    SingleDescription
-    SingleFirstIconFile {
-      ...UploadFileFragment
-    }
-    SingleHeroFile {
-      ...UploadFileFragment
-    }
-    SingleLadder {
-      ...LadderFragment
-    }
-    SingleSecondIconFile {
-      ...UploadFileFragment
-    }
-    SingleTitle
-    SingleUnderlineTitle
-    UnderlineLeft
-    Slug
-    Faq {
-      Answer
-      Question
-    }
-    Seo {
-      ...ComponentSeoSeoFragment
-    }
-  }
-}
-    ${UploadFileFragmentFragmentDoc}
-${LadderFragmentFragmentDoc}
-${ComponentSeoSeoFragmentFragmentDoc}`;
 export const GetIntegrationPageDocument = gql`
     query GetIntegrationPage {
   integrationsPage {
@@ -3352,6 +3255,195 @@ export const GetIntegrationPageDocument = gql`
     ${UploadFileFragmentFragmentDoc}
 ${LadderFragmentFragmentDoc}
 ${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetPricingPageDocument = gql`
+    query GetPricingPage {
+  pricingPage {
+    Title
+    TitleUnderline
+    Description
+    HeroImageFile {
+      ...UploadFileFragment
+    }
+    PricingFaq {
+      Answer
+      Question
+      id
+    }
+    Seo {
+      ...ComponentSeoSeoFragment
+    }
+  }
+}
+    ${UploadFileFragmentFragmentDoc}
+${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetBusinessTemplateDocument = gql`
+    query GetBusinessTemplate($slug: String!) {
+  businesses(filters: {Slug: {eq: $slug}}) {
+    Name
+    Title
+    TitleUnderline
+    UnderlineLeft
+    Description
+    HeroImageFile {
+      ...UploadFileFragment
+    }
+    Ladder {
+      ...LadderFragment
+    }
+    AboutTitle
+    AboutDescription
+    Slug
+    Seo {
+      ...ComponentSeoSeoFragment
+    }
+    Faq {
+      Answer
+      Question
+    }
+  }
+}
+    ${UploadFileFragmentFragmentDoc}
+${LadderFragmentFragmentDoc}
+${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetBusinessTemplateSlugsDocument = gql`
+    query GetBusinessTemplateSlugs {
+  businesses(pagination: {limit: 1000}) {
+    Slug
+    createdAt
+    updatedAt
+  }
+}
+    `;
+export const GetFeaturesTemplateDocument = gql`
+    query GetFeaturesTemplate($slug: String!) {
+  features(filters: {Slug: {eq: $slug}}) {
+    SingleTitle
+    SingleDescription
+    SingleImageFile {
+      ...UploadFileFragment
+    }
+    SingleTitleUnderline
+    UnderlineLeft
+    Slug
+    Name
+    Ladder {
+      ...LadderFragment
+    }
+    CtaText
+    AnswersTitle
+    AnswersInfo
+    AnswersDescription
+    Answers {
+      AnswerTitle
+      AnswerLink
+    }
+    Seo {
+      ...ComponentSeoSeoFragment
+    }
+    Faq {
+      Answer
+      Question
+    }
+  }
+}
+    ${UploadFileFragmentFragmentDoc}
+${LadderFragmentFragmentDoc}
+${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetFeaturesTemplateSlugsDocument = gql`
+    query GetFeaturesTemplateSlugs {
+  features(pagination: {limit: 1000}) {
+    Slug
+    createdAt
+    updatedAt
+  }
+}
+    `;
+export const GetGlossaryTemplateDocument = gql`
+    query GetGlossaryTemplate($slug: String!) {
+  glossaries(filters: {Slug: {eq: $slug}}) {
+    Slug
+    Name
+    ShortDescription
+    PageTitle
+    PageDescription
+    publishedAt
+    updatedAt
+    Content
+    Image {
+      ...UploadFileFragment
+    }
+    Seo {
+      ...ComponentSeoSeoFragment
+    }
+    Faq {
+      Answer
+      Question
+    }
+    relatedGlossaries {
+      Slug
+      Name
+      ShortDescription
+      Image {
+        ...UploadFileFragment
+      }
+    }
+  }
+}
+    ${UploadFileFragmentFragmentDoc}
+${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetGlossaryTemplateSlugsDocument = gql`
+    query GetGlossaryTemplateSlugs {
+  glossaries(pagination: {limit: 1000}) {
+    Slug
+    createdAt
+    updatedAt
+  }
+}
+    `;
+export const GetIntegrationTemplateDocument = gql`
+    query GetIntegrationTemplate($slug: String!) {
+  integrations(filters: {Slug: {eq: $slug}}) {
+    Name
+    SingleAboutTitle
+    SingleAboutDescription
+    SingleDescription
+    SingleFirstIconFile {
+      ...UploadFileFragment
+    }
+    SingleHeroFile {
+      ...UploadFileFragment
+    }
+    SingleLadder {
+      ...LadderFragment
+    }
+    SingleSecondIconFile {
+      ...UploadFileFragment
+    }
+    SingleTitle
+    SingleUnderlineTitle
+    UnderlineLeft
+    Slug
+    Faq {
+      Answer
+      Question
+    }
+    Seo {
+      ...ComponentSeoSeoFragment
+    }
+  }
+}
+    ${UploadFileFragmentFragmentDoc}
+${LadderFragmentFragmentDoc}
+${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetIntegrationTemplateSlugsDocument = gql`
+    query GetIntegrationTemplateSlugs {
+  integrations(pagination: {limit: 1000}) {
+    Slug
+    createdAt
+    updatedAt
+  }
+}
+    `;
 export const GetLandingPageTemplateDocument = gql`
     query GetLandingPageTemplate($slug: String!) {
   landings(filters: {Slug: {eq: $slug}}) {
@@ -3383,6 +3475,15 @@ export const GetLandingPageTemplateDocument = gql`
     ${UploadFileFragmentFragmentDoc}
 ${LadderFragmentFragmentDoc}
 ${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetLandingPageTemplateSlugsDocument = gql`
+    query GetLandingPageTemplateSlugs {
+  landings(pagination: {limit: 1000}) {
+    Slug
+    createdAt
+    updatedAt
+  }
+}
+    `;
 export const GetLegalPageTemplateDocument = gql`
     query GetLegalPageTemplate($slug: String!) {
   legalPages(filters: {Slug: {eq: $slug}}) {
@@ -3400,6 +3501,15 @@ export const GetLegalPageTemplateDocument = gql`
   }
 }
     ${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetLegalPageTemplateSlugsDocument = gql`
+    query GetLegalPageTemplateSlugs {
+  legalPages(pagination: {limit: 1000}) {
+    Slug
+    createdAt
+    updatedAt
+  }
+}
+    `;
 export const GetPostPageDocument = gql`
     query GetPostPage($slug: String!) {
   posts(filters: {Slug: {eq: $slug}}, pagination: {limit: 1}) {
@@ -3445,27 +3555,15 @@ export const GetPostPageDocument = gql`
     ${UploadFileFragmentFragmentDoc}
 ${ComponentSeoSeoFragmentFragmentDoc}
 ${PostFragmentFragmentDoc}`;
-export const GetPricingPageDocument = gql`
-    query GetPricingPage {
-  pricingPage {
-    Title
-    TitleUnderline
-    Description
-    HeroImageFile {
-      ...UploadFileFragment
-    }
-    PricingFaq {
-      Answer
-      Question
-      id
-    }
-    Seo {
-      ...ComponentSeoSeoFragment
-    }
+export const GetBlogPageArticlesSlugsDocument = gql`
+    query GetBlogPageArticlesSlugs {
+  posts(status: PUBLISHED, pagination: {limit: 1000}) {
+    Slug
+    updatedAt
+    createdAt
   }
 }
-    ${UploadFileFragmentFragmentDoc}
-${ComponentSeoSeoFragmentFragmentDoc}`;
+    `;
 export const GetTestimonialsDocument = gql`
     query GetTestimonials {
   testimonials {
@@ -3506,14 +3604,8 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     GetBlogPageArticles(variables: GetBlogPageArticlesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetBlogPageArticlesQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetBlogPageArticlesQuery>({ document: GetBlogPageArticlesDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetBlogPageArticles', 'query', variables);
     },
-    GetBusinessTemplate(variables: GetBusinessTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetBusinessTemplateQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<GetBusinessTemplateQuery>({ document: GetBusinessTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetBusinessTemplate', 'query', variables);
-    },
     getAllFaqs(variables?: GetAllFaqsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetAllFaqsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetAllFaqsQuery>({ document: GetAllFaqsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'getAllFaqs', 'query', variables);
-    },
-    GetFeaturesTemplate(variables: GetFeaturesTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeaturesTemplateQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<GetFeaturesTemplateQuery>({ document: GetFeaturesTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetFeaturesTemplate', 'query', variables);
     },
     GetFeaturesPage(variables?: GetFeaturesPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeaturesPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetFeaturesPageQuery>({ document: GetFeaturesPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetFeaturesPage', 'query', variables);
@@ -3521,32 +3613,59 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     GetGlossaryPage(variables?: GetGlossaryPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetGlossaryPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetGlossaryPageQuery>({ document: GetGlossaryPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetGlossaryPage', 'query', variables);
     },
-    GetGlossaryTemplate(variables: GetGlossaryTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetGlossaryTemplateQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<GetGlossaryTemplateQuery>({ document: GetGlossaryTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetGlossaryTemplate', 'query', variables);
-    },
     GetHeaderData(variables?: GetHeaderDataQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetHeaderDataQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetHeaderDataQuery>({ document: GetHeaderDataDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetHeaderData', 'query', variables);
     },
     GetHomePage(variables?: GetHomePageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetHomePageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetHomePageQuery>({ document: GetHomePageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetHomePage', 'query', variables);
     },
+    GetIntegrationPage(variables?: GetIntegrationPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetIntegrationPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetIntegrationPageQuery>({ document: GetIntegrationPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetIntegrationPage', 'query', variables);
+    },
+    GetPricingPage(variables?: GetPricingPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetPricingPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetPricingPageQuery>({ document: GetPricingPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetPricingPage', 'query', variables);
+    },
+    GetBusinessTemplate(variables: GetBusinessTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetBusinessTemplateQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetBusinessTemplateQuery>({ document: GetBusinessTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetBusinessTemplate', 'query', variables);
+    },
+    GetBusinessTemplateSlugs(variables?: GetBusinessTemplateSlugsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetBusinessTemplateSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetBusinessTemplateSlugsQuery>({ document: GetBusinessTemplateSlugsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetBusinessTemplateSlugs', 'query', variables);
+    },
+    GetFeaturesTemplate(variables: GetFeaturesTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeaturesTemplateQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetFeaturesTemplateQuery>({ document: GetFeaturesTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetFeaturesTemplate', 'query', variables);
+    },
+    GetFeaturesTemplateSlugs(variables?: GetFeaturesTemplateSlugsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeaturesTemplateSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetFeaturesTemplateSlugsQuery>({ document: GetFeaturesTemplateSlugsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetFeaturesTemplateSlugs', 'query', variables);
+    },
+    GetGlossaryTemplate(variables: GetGlossaryTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetGlossaryTemplateQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetGlossaryTemplateQuery>({ document: GetGlossaryTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetGlossaryTemplate', 'query', variables);
+    },
+    GetGlossaryTemplateSlugs(variables?: GetGlossaryTemplateSlugsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetGlossaryTemplateSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetGlossaryTemplateSlugsQuery>({ document: GetGlossaryTemplateSlugsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetGlossaryTemplateSlugs', 'query', variables);
+    },
     GetIntegrationTemplate(variables: GetIntegrationTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetIntegrationTemplateQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetIntegrationTemplateQuery>({ document: GetIntegrationTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetIntegrationTemplate', 'query', variables);
     },
-    GetIntegrationPage(variables?: GetIntegrationPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetIntegrationPageQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<GetIntegrationPageQuery>({ document: GetIntegrationPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetIntegrationPage', 'query', variables);
+    GetIntegrationTemplateSlugs(variables?: GetIntegrationTemplateSlugsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetIntegrationTemplateSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetIntegrationTemplateSlugsQuery>({ document: GetIntegrationTemplateSlugsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetIntegrationTemplateSlugs', 'query', variables);
     },
     GetLandingPageTemplate(variables: GetLandingPageTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetLandingPageTemplateQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetLandingPageTemplateQuery>({ document: GetLandingPageTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetLandingPageTemplate', 'query', variables);
     },
+    GetLandingPageTemplateSlugs(variables?: GetLandingPageTemplateSlugsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetLandingPageTemplateSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetLandingPageTemplateSlugsQuery>({ document: GetLandingPageTemplateSlugsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetLandingPageTemplateSlugs', 'query', variables);
+    },
     GetLegalPageTemplate(variables: GetLegalPageTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetLegalPageTemplateQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetLegalPageTemplateQuery>({ document: GetLegalPageTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetLegalPageTemplate', 'query', variables);
+    },
+    GetLegalPageTemplateSlugs(variables?: GetLegalPageTemplateSlugsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetLegalPageTemplateSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetLegalPageTemplateSlugsQuery>({ document: GetLegalPageTemplateSlugsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetLegalPageTemplateSlugs', 'query', variables);
     },
     GetPostPage(variables: GetPostPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetPostPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetPostPageQuery>({ document: GetPostPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetPostPage', 'query', variables);
     },
-    GetPricingPage(variables?: GetPricingPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetPricingPageQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<GetPricingPageQuery>({ document: GetPricingPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetPricingPage', 'query', variables);
+    GetBlogPageArticlesSlugs(variables?: GetBlogPageArticlesSlugsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetBlogPageArticlesSlugsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetBlogPageArticlesSlugsQuery>({ document: GetBlogPageArticlesSlugsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetBlogPageArticlesSlugs', 'query', variables);
     },
     GetTestimonials(variables?: GetTestimonialsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetTestimonialsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetTestimonialsQuery>({ document: GetTestimonialsDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetTestimonials', 'query', variables);

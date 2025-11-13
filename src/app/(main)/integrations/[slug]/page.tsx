@@ -30,6 +30,16 @@ export async function generateMetadata({ params }: IntegrationPageProps) {
     return generateSeo({ pathname: `/integrations/${slug}`, seo: data?.Seo })
 }
 
+export async function generateStaticParams() {
+    const { integrations } = await api.GetIntegrationTemplateSlugs()
+    return integrations.map((integration) => {
+        if (!integration?.Slug) return null
+        return {
+            slug: integration.Slug,
+        }
+    })
+}
+
 export default async function IntegrationPage({ params }: IntegrationPageProps) {
     const { slug } = await params
     const { integrations } = await getData(slug)

@@ -30,6 +30,16 @@ export async function generateMetadata({ params }: GlossaryPageTemplateProps) {
     return generateSeo({ pathname: `/glossary/${slug}`, seo: data?.Seo })
 }
 
+export async function generateStaticParams() {
+    const { glossaries } = await api.GetGlossaryTemplateSlugs()
+    return glossaries.map((glossary) => {
+        if (!glossary?.Slug) return null
+        return {
+            slug: glossary.Slug,
+        }
+    })
+}
+
 export default async function GlossaryPageTemplate({ params }: GlossaryPageTemplateProps) {
     const { slug } = await params
     const { glossaries } = await getData(slug)

@@ -5,7 +5,7 @@ import { CLOUDINARY_URL } from '@/constants'
 export default function SingleReview() {
     return (
         <section className="bg-primary-50 py-8 lg:pt-12 lg:pb-6">
-            <div className="relative z-10 container mx-auto flex items-center justify-center gap-8">
+            <div className="relative z-10 container mx-auto flex flex-col items-center justify-center gap-8 lg:flex-row">
                 <div className="flex max-w-[418px] flex-col">
                     <svg fill="none" height="20" viewBox="0 0 122 20" width="122" xmlns="http://www.w3.org/2000/svg">
                         <path

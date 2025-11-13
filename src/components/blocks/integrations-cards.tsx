@@ -17,36 +17,44 @@ interface IntegrationsCardsProps {
 
 export default function IntegrationsCards({ description, integrations, title }: IntegrationsCardsProps) {
     return (
-        <section className="container mx-auto py-10 md:py-20">
-            <div className="mx-auto text-center md:w-1/2">
-                {title && <h2 className="text-[28px] leading-[120%] font-semibold md:text-[32px]">{title}</h2>}
-                {description && <p className="mt-4 text-neutral-600">{description}</p>}
+        <section className="container mx-auto flex flex-col gap-5 py-10 lg:py-16">
+            <div className="flex flex-col gap-3 text-center lg:gap-5">
+                {title && (
+                    <h2 className="mx-auto max-w-[800px] text-[28px] leading-[120%] font-semibold lg:text-[40px]">
+                        {title}
+                    </h2>
+                )}
+                {description && <p className="text-neutral-500 lg:text-lg">{description}</p>}
             </div>
-            <div className="mt-16 grid grid-cols-1 gap-x-5 gap-y-16 md:grid-cols-2">
+            <div className="mt-[60px] grid grid-cols-1 gap-x-5 gap-y-16 md:grid-cols-2 lg:mt-[100px]">
                 {integrations.map((item, idx) => {
                     if (!item) return null
                     return (
                         <div
                             className={`
-                              relative space-y-2 rounded-[20px] bg-white px-8 py-10
-                              shadow-[0px_0.5px_7.01px_0px_#54535F09,0px_4px_30px_0px_#82818812]
+                              relative flex flex-col rounded-xl bg-white px-6 pt-12 pb-5 shadow-custom
+                              lg:pr-[110px]
                             `}
                             key={idx}
                         >
                             {item.IconFile?.url && (
                                 <Image
                                     alt={item.IconFile.alternativeText ?? ''}
-                                    className="absolute top-0 h-[90px] w-auto -translate-y-1/2"
-                                    height={100}
+                                    className={`
+                                      pointer-events-none absolute top-0 h-[72px] w-auto -translate-y-1/2 select-none
+                                    `}
+                                    height={72}
                                     loading="lazy"
                                     src={item.IconFile.url}
-                                    width={100}
+                                    width={72}
                                 />
                             )}
-                            <p className="text-[28px] font-semibold">{item.Name}</p>
-                            <p className="text-neutral-600">{item.Description}</p>
+                            <p className="mb-2 text-xl font-semibold lg:text-[28px]">{item.Name}</p>
+                            <p className="mb-4 flex-1 text-sm leading-[160%] text-neutral-600 lg:mb-[38px]">
+                                {item.Description}
+                            </p>
                             <Link
-                                className="group flex items-center space-x-1 text-primary-200"
+                                className="group flex items-center gap-1.5 py-3 text-primary-200"
                                 href={`/integrations/${item.Slug}/`}
                             >
                                 <p>Learn more</p>

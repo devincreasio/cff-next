@@ -1,9 +1,8 @@
-import { Metadata } from 'next'
-
-import BlogCard from '@/app/(main)/blog/_components/blog-card'
-import BlogHero from '@/app/(main)/blog/_components/blog-hero'
+import { BlogCard } from '@/app/(main)/blog/_components/blog-card'
+import { BlogHero } from '@/app/(main)/blog/_components/blog-hero'
 import { Cta } from '@/components/blocks/cta'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
+import { generateSeo } from '@/components/shared/generate-seo'
 import { PaginationComponent } from '@/components/shared/pagination'
 import { ARTICLES_PER_PAGE } from '@/constants'
 import { api } from '@/lib/api'
@@ -49,9 +48,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     )
 }
 
-export async function generateMetadata({ searchParams }: BlogPageProps): Promise<Metadata> {
+export async function generateMetadata({ searchParams }: BlogPageProps) {
     const { page } = await searchParams
-    return {
-        title: `Blog - page ${page ?? '1'}`,
-    }
+    return generateSeo({
+        pathname: `/blog?page=${page}`,
+        seo: {
+            MetaDescription:
+                'Read the latest articles on cash flow management, financial tips, and business growth strategies on the CashFlowFrog blog.',
+            MetaTitle: `Blog - page ${page ?? '1'}`,
+        },
+    })
 }

@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 import { useMemo } from 'react'
 
-interface BlogContentTitleProps {
+interface PostContentTitleProps {
     activeTitle: string
     title: string
 }
 
-export function BlogContentTitle({ activeTitle, title }: BlogContentTitleProps) {
+export function PostContentTitle({ activeTitle, title }: PostContentTitleProps) {
     const isActive = useMemo(() => {
         return title.toLowerCase().trim() === activeTitle.toLowerCase().trim()
     }, [title, activeTitle])

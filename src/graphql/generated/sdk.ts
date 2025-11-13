@@ -2899,6 +2899,18 @@ export type GetFeaturesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetFeaturesPageQuery = { __typename?: 'Query', featuresPage?: { __typename?: 'FeaturesPage', Title?: string | null, TitleUnderline?: string | null, UnderlineLeft?: boolean | null, Description?: string | null, CtaText?: string | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null, features: Array<{ __typename?: 'Feature', Title?: string | null, Name?: string | null, Description?: string | null, Link?: string | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
 
+export type GetGlossaryPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetGlossaryPageQuery = { __typename?: 'Query', glossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string } | null> };
+
+export type GetGlossaryTemplateQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetGlossaryTemplateQuery = { __typename?: 'Query', glossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string, ShortDescription?: string | null, PageTitle?: string | null, PageDescription?: string | null, publishedAt?: string | null, updatedAt?: string | null, Content?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, relatedGlossaries: Array<{ __typename?: 'Glossary', Slug: string, Name: string, ShortDescription?: string | null, Image?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> } | null> };
+
 export type GetHeaderDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3154,6 +3166,47 @@ export const GetFeaturesPageDocument = gql`
 }
     ${ComponentSeoSeoFragmentFragmentDoc}
 ${UploadFileFragmentFragmentDoc}`;
+export const GetGlossaryPageDocument = gql`
+    query GetGlossaryPage {
+  glossaries(sort: ["Name:desc"], pagination: {limit: 100}) {
+    Slug
+    Name
+  }
+}
+    `;
+export const GetGlossaryTemplateDocument = gql`
+    query GetGlossaryTemplate($slug: String!) {
+  glossaries(filters: {Slug: {eq: $slug}}) {
+    Slug
+    Name
+    ShortDescription
+    PageTitle
+    PageDescription
+    publishedAt
+    updatedAt
+    Content
+    Image {
+      ...UploadFileFragment
+    }
+    Seo {
+      ...ComponentSeoSeoFragment
+    }
+    Faq {
+      Answer
+      Question
+    }
+    relatedGlossaries {
+      Slug
+      Name
+      ShortDescription
+      Image {
+        ...UploadFileFragment
+      }
+    }
+  }
+}
+    ${UploadFileFragmentFragmentDoc}
+${ComponentSeoSeoFragmentFragmentDoc}`;
 export const GetHeaderDataDocument = gql`
     query GetHeaderData {
   setting {
@@ -3464,6 +3517,12 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     GetFeaturesPage(variables?: GetFeaturesPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetFeaturesPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetFeaturesPageQuery>({ document: GetFeaturesPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetFeaturesPage', 'query', variables);
+    },
+    GetGlossaryPage(variables?: GetGlossaryPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetGlossaryPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetGlossaryPageQuery>({ document: GetGlossaryPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetGlossaryPage', 'query', variables);
+    },
+    GetGlossaryTemplate(variables: GetGlossaryTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetGlossaryTemplateQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetGlossaryTemplateQuery>({ document: GetGlossaryTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetGlossaryTemplate', 'query', variables);
     },
     GetHeaderData(variables?: GetHeaderDataQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetHeaderDataQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetHeaderDataQuery>({ document: GetHeaderDataDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetHeaderData', 'query', variables);

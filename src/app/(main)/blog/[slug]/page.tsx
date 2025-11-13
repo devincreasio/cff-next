@@ -1,18 +1,17 @@
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Article, CreativeWorkSeries, WithContext } from 'schema-dts'
 
-import { BlogContent } from '@/app/(main)/blog/_components/blog-content'
 import { Cta } from '@/components/blocks/cta'
 import { Faq } from '@/components/blocks/faq'
-import { BlurCircle } from '@/components/shared/blur-circle'
+import { PostContent } from '@/components/blog/post-content'
+import { PostHero } from '@/components/blog/post-hero'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { GenerateJsonLd } from '@/components/shared/generate-jsonld'
 import { generateSeo } from '@/components/shared/generate-seo'
 import { api } from '@/lib/api'
 import { formatDate } from '@/lib/utils'
 
-import BlogCard from '../_components/blog-card'
+import { BlogCard } from '../_components/blog-card'
 import { BlogRating } from '../_components/blog-rating'
 
 const getData = (slug: string) => api.GetPostPage({ slug })
@@ -25,9 +24,7 @@ interface BlogPageProps {
 
 export default async function BlogPage({ params }: BlogPageProps) {
     const { slug } = await params
-
     const { posts, relatedPosts } = await getData(slug)
-
     const [post] = posts
 
     if (!post) {
@@ -90,28 +87,14 @@ export default async function BlogPage({ params }: BlogPageProps) {
             />
             <GenerateJsonLd faqData={post.Faq} seo={post.Seo} showJsonLdWebpage={false} />
             <Breadcrumbs activePage={post.Title} pages={[{ href: '/blog', name: 'Blog' }]} />
-            <section className={`relative pt-12 pb-6`}>
-                <BlurCircle color="blue" left={-378} size={591} top={-70} />
-                <div className="relative z-10 container mx-auto flex flex-col items-center justify-center text-center">
-                    <span className="mb-0.5 leading-[140%]">{formatDate(post.publishedAt)}</span>
-                    <h1 className="mb-5 text-[30px] leading-[100%] font-bold lg:text-[48px] lg:font-semibold">
-                        {post.Title}
-                    </h1>
-                    <div className="flex items-center gap-4">
-                        {post.author?.ImageFile?.url && (
-                            <Image
-                                alt={post.author.ImageFile.alternativeText ?? 'Author Image'}
-                                className="size-10 overflow-hidden rounded-full"
-                                height={40}
-                                src={post.author.ImageFile.url}
-                                width={40}
-                            />
-                        )}
-                        <span className="leading-[140%]">{post.author?.Name}</span>
-                    </div>
-                </div>
-            </section>
-            <BlogContent data={post} />
+            <PostHero
+                authorImageAlt={post.author?.ImageFile?.alternativeText ?? ''}
+                authorImageUrl={post.author?.ImageFile?.url ?? ''}
+                authorName={post.author?.Name ?? 'Cashflow Frog'}
+                publishedAt={formatDate(post.publishedAt)}
+                title={post.Title}
+            />
+            <PostContent data={post} />
             <BlogRating data={post} />
             <section className="relative py-16 lg:py-[90px]">
                 <div className="relative container mx-auto grid gap-6 lg:grid-cols-3 lg:gap-y-12">

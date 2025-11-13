@@ -5,17 +5,22 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { InView } from 'react-intersection-observer'
 
-import { GetPostPageQuery } from '@/graphql/generated/sdk'
 import { stripIndent } from '@/lib/utils'
 
-import { BlogContentTitle } from './blog-content-title'
 import { BlogCta } from './blog-cta'
+import { PostContentTitle } from './post-content-title'
 
-interface BlogContentProps {
-    data: NonNullable<GetPostPageQuery['posts'][0]>
+interface PostContentProps {
+    data: {
+        Content?: null | string
+        ImageFile?: {
+            alternativeText?: null | string
+            url?: string
+        } | null
+    }
 }
 
-export function BlogContent({ data }: BlogContentProps) {
+export function PostContent({ data }: PostContentProps) {
     const [activeTitle, setActiveTitle] = useState('')
 
     return (
@@ -80,7 +85,7 @@ export function BlogContent({ data }: BlogContentProps) {
                 <div className="flex flex-col gap-2">
                     {data.Content?.match(/^##\s(.*?)(?=\n|$)/gm)?.map((header, index) => {
                         return (
-                            <BlogContentTitle activeTitle={activeTitle} key={index} title={header.replace('## ', '')} />
+                            <PostContentTitle activeTitle={activeTitle} key={index} title={header.replace('## ', '')} />
                         )
                     })}
                 </div>

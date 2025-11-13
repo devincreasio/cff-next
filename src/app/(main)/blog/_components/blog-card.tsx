@@ -10,7 +10,7 @@ interface BlogCardProps {
     post?: null | PostFragmentFragment
 }
 
-export default function BlogCard({ post }: BlogCardProps) {
+export function BlogCard({ post }: BlogCardProps) {
     if (!post) return null
     return (
         <Link

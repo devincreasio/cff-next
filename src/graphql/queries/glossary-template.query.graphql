@@ -1,0 +1,30 @@
+query GetGlossaryTemplate($slug: String!) {
+    glossaries(filters: { Slug: { eq: $slug } }) {
+        Slug
+        Name
+        ShortDescription
+        PageTitle
+        PageDescription
+        publishedAt
+        updatedAt
+        Content
+        Image {
+            ...UploadFileFragment
+        }
+        Seo {
+            ...ComponentSeoSeoFragment
+        }
+        Faq {
+            Answer
+            Question
+        }
+        relatedGlossaries {
+            Slug
+            Name
+            ShortDescription
+            Image {
+                ...UploadFileFragment
+            }
+        }
+    }
+}

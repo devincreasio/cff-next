@@ -10,7 +10,7 @@ interface BlogHeroProps {
     title: string
 }
 
-export default function BlogHero({ post, title }: BlogHeroProps) {
+export function BlogHero({ post, title }: BlogHeroProps) {
     return (
         <section className="relative flex flex-col">
             <BlurCircle color="blue" left={-254} size={590} top={-38} />

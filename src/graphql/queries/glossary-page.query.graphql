@@ -1,0 +1,6 @@
+query GetGlossaryPage {
+    glossaries(sort: ["Name:desc"], pagination: { limit: 100 }) {
+        Slug
+        Name
+    }
+}

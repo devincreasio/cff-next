@@ -6,13 +6,13 @@ import { Button } from '@/components/ui/button'
 import { ARTICLES_PER_PAGE } from '@/constants'
 import { PostFragmentFragment } from '@/graphql/generated/sdk'
 
-import BlogCard from './blog-card'
+import { BlogCard } from './blog-card'
 
 interface BlogListLoadMoreProps {
     data?: (null | PostFragmentFragment)[] | null
 }
 
-export default function BlogListLoadMore({ data }: BlogListLoadMoreProps) {
+export function BlogListLoadMore({ data }: BlogListLoadMoreProps) {
     const [visibleCount, setVisibleCount] = useState(ARTICLES_PER_PAGE)
     const hasMore = visibleCount < (data?.length ?? 0)
 

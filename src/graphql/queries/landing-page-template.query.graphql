@@ -1,0 +1,27 @@
+query GetLandingPageTemplate($slug: String!) {
+    landings(filters: { Slug: { eq: $slug } }) {
+        Slug
+        template
+        SubTitle
+        Title
+        TitleUnderline
+        Description
+        HeroImageFile {
+            ...UploadFileFragment
+        }
+        showPrice
+        showFooter
+        customUrlQuery
+        customButtonText
+        Ladder {
+            ...LadderFragment
+        }
+        Seo {
+            ...ComponentSeoSeoFragment
+        }
+        Faq {
+            Answer
+            Question
+        }
+    }
+}

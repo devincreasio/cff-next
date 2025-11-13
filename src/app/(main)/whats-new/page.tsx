@@ -1,5 +1,5 @@
-import BlogHero from '@/app/blog/_components/blog-hero'
-import BlogListLoadMore from '@/app/blog/_components/blog-list-load-more'
+import BlogHero from '@/app/(main)/blog/_components/blog-hero'
+import BlogListLoadMore from '@/app/(main)/blog/_components/blog-list-load-more'
 import { Cta } from '@/components/blocks/cta'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { generateSeo } from '@/components/shared/generate-seo'

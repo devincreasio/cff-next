@@ -3,15 +3,14 @@ import { Header } from './header'
 
 interface LayoutProps {
     children?: React.ReactNode
-    onlySeo?: boolean
 }
 
-export function Layout({ children, onlySeo }: LayoutProps) {
+export function Layout({ children }: LayoutProps) {
     return (
         <>
-            <Header onlySeo={onlySeo} />
+            <Header />
             <main className="pt-16 lg:pt-[100px]">{children}</main>
-            {!onlySeo && <Footer />}
+            <Footer />
         </>
     )
 }

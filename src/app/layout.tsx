@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import { Manrope } from 'next/font/google'
 
-import { Layout } from '@/components/layout'
 import { SITE_URL } from '@/constants'
 
 import './globals.css'
@@ -31,9 +30,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${manrope.className} antialiased`}>
-                <Layout>{children}</Layout>
-            </body>
+            <body className={`${manrope.className} antialiased`}>{children}</body>
         </html>
     )
 }

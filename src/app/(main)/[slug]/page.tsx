@@ -10,6 +10,8 @@ import { api } from '@/lib/api'
 
 const getData = (slug: string) => api.GetLegalPageTemplate({ slug })
 
+export const revalidate = 3600
+
 interface LegalPageTemplateProps {
     params: Promise<{ slug: string }>
 }

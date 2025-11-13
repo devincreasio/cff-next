@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Article, CreativeWorkSeries, WithContext } from 'schema-dts'
 
-import { BlogContent } from '@/app/blog/_components/blog-content'
+import { BlogContent } from '@/app/(main)/blog/_components/blog-content'
 import { Cta } from '@/components/blocks/cta'
 import { Faq } from '@/components/blocks/faq'
 import { BlurCircle } from '@/components/shared/blur-circle'

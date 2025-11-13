@@ -3,7 +3,11 @@ import Link from 'next/link'
 
 import { CLOUDINARY_URL } from '@/constants'
 
-export function Footer() {
+interface FooterProps {
+    hideMenu?: boolean
+}
+
+export function Footer({ hideMenu = false }: FooterProps) {
     const socialLinks = [
         {
             href: 'https://www.youtube.com/c/CashFlowFrog',
@@ -81,19 +85,17 @@ export function Footer() {
     ]
 
     return (
-        <>
-            <footer className="relative z-50 bg-brown-background text-white">
-                <div
-                    className={`container mx-auto flex flex-col gap-y-8 pt-16 pb-14 md:flex-row md:gap-x-20 md:gap-y-0`}
-                >
-                    <div className="flex shrink-0 flex-col gap-6">
-                        <Image
-                            alt="Logo"
-                            height={43}
-                            loading="lazy"
-                            src={`${CLOUDINARY_URL}/images/svg/logo-green.svg`}
-                            width={215}
-                        />
+        <footer className="relative z-50 bg-brown-background text-white">
+            <div className={`container mx-auto flex flex-col gap-y-8 pt-16 pb-14 md:flex-row md:gap-x-20 md:gap-y-0`}>
+                <div className="flex shrink-0 flex-col gap-6">
+                    <Image
+                        alt="Logo"
+                        height={43}
+                        loading="lazy"
+                        src={`${CLOUDINARY_URL}/images/svg/logo-green.svg`}
+                        width={215}
+                    />
+                    {!hideMenu && (
                         <div className="flex items-center gap-4">
                             {socialLinks.map((link) => (
                                 <a
@@ -113,7 +115,9 @@ export function Footer() {
                                 </a>
                             ))}
                         </div>
-                    </div>
+                    )}
+                </div>
+                {!hideMenu && (
                     <div className="flex flex-1 flex-col gap-5">
                         <p className="font-semibold">Integrations</p>
                         <div className="grid gap-x-20 gap-y-2 lg:grid-cols-2">
@@ -131,6 +135,8 @@ export function Footer() {
                             ))}
                         </div>
                     </div>
+                )}
+                {!hideMenu && (
                     <div className="flex flex-col gap-5">
                         <p className="font-semibold">Resources</p>
                         <div className="flex flex-col space-y-2">
@@ -148,25 +154,25 @@ export function Footer() {
                             ))}
                         </div>
                     </div>
+                )}
+            </div>
+            <div
+                className={`
+                  container mx-auto flex flex-col justify-between gap-y-3 border-t border-[#343536] py-5 text-xs
+                  md:flex-row
+                `}
+            >
+                <p>© Cash Flow Frog {new Date().getFullYear()}. All Rights Reserved.</p>
+                <div className="flex items-center gap-5">
+                    <Link className="transition-colors hover:text-primary-100" href="/terms-conditions/">
+                        Terms & Conditions
+                    </Link>
+                    <Link className="transition-colors hover:text-primary-100" href="/privacy-policy/">
+                        Privacy Policy
+                    </Link>
                 </div>
-                <div
-                    className={`
-                      container mx-auto flex flex-col justify-between gap-y-3 border-t border-[#343536] py-5 text-xs
-                      md:flex-row
-                    `}
-                >
-                    <p>© Cash Flow Frog {new Date().getFullYear()}. All Rights Reserved.</p>
-                    <div className="flex items-center gap-5">
-                        <Link className="transition-colors hover:text-primary-100" href="/terms-conditions/">
-                            Terms & Conditions
-                        </Link>
-                        <Link className="transition-colors hover:text-primary-100" href="/privacy-policy/">
-                            Privacy Policy
-                        </Link>
-                    </div>
-                </div>
-            </footer>
-        </>
+            </div>
+        </footer>
     )
 }
 

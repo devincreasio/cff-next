@@ -2921,6 +2921,13 @@ export type GetIntegrationPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetIntegrationPageQuery = { __typename?: 'Query', integrationsPage?: { __typename?: 'IntegrationsPage', IntegrationDescription?: string | null, IntegrationTitle?: string | null, Title?: string | null, TitleUnderline?: string | null, UnderlineLeft?: boolean | null, Description?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null } | null, integrations: Array<{ __typename?: 'Integration', Description?: string | null, Name?: string | null, Slug?: string | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> };
 
+export type GetLandingPageTemplateQueryVariables = Exact<{
+  slug: Scalars['String']['input'];
+}>;
+
+
+export type GetLandingPageTemplateQuery = { __typename?: 'Query', landings: Array<{ __typename?: 'Landing', Slug?: string | null, template?: Enum_Landing_Template | null, SubTitle?: string | null, Title?: string | null, TitleUnderline?: string | null, Description?: string | null, showPrice: boolean, showFooter?: boolean | null, customUrlQuery?: string | null, customButtonText?: string | null, HeroImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, Ladder?: Array<{ __typename?: 'ComponentLadderLadderItem', Description?: string | null, Link?: string | null, Subtitle?: string | null, Title?: string | null, reverse?: boolean | null, ImageFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null, IconFile?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null> | null, Seo?: { __typename?: 'ComponentSeoSeo', MetaDescription?: string | null, MetaTitle?: string | null, OgDescription?: string | null, OgTitle?: string | null, ShareImageFile?: { __typename?: 'UploadFile', url: string } | null } | null, Faq?: Array<{ __typename?: 'ComponentFaqFaq', Answer?: string | null, Question?: string | null } | null> | null } | null> };
+
 export type GetLegalPageTemplateQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
@@ -3292,6 +3299,37 @@ export const GetIntegrationPageDocument = gql`
     ${UploadFileFragmentFragmentDoc}
 ${LadderFragmentFragmentDoc}
 ${ComponentSeoSeoFragmentFragmentDoc}`;
+export const GetLandingPageTemplateDocument = gql`
+    query GetLandingPageTemplate($slug: String!) {
+  landings(filters: {Slug: {eq: $slug}}) {
+    Slug
+    template
+    SubTitle
+    Title
+    TitleUnderline
+    Description
+    HeroImageFile {
+      ...UploadFileFragment
+    }
+    showPrice
+    showFooter
+    customUrlQuery
+    customButtonText
+    Ladder {
+      ...LadderFragment
+    }
+    Seo {
+      ...ComponentSeoSeoFragment
+    }
+    Faq {
+      Answer
+      Question
+    }
+  }
+}
+    ${UploadFileFragmentFragmentDoc}
+${LadderFragmentFragmentDoc}
+${ComponentSeoSeoFragmentFragmentDoc}`;
 export const GetLegalPageTemplateDocument = gql`
     query GetLegalPageTemplate($slug: String!) {
   legalPages(filters: {Slug: {eq: $slug}}) {
@@ -3438,6 +3476,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     GetIntegrationPage(variables?: GetIntegrationPageQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetIntegrationPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetIntegrationPageQuery>({ document: GetIntegrationPageDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetIntegrationPage', 'query', variables);
+    },
+    GetLandingPageTemplate(variables: GetLandingPageTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetLandingPageTemplateQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetLandingPageTemplateQuery>({ document: GetLandingPageTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetLandingPageTemplate', 'query', variables);
     },
     GetLegalPageTemplate(variables: GetLegalPageTemplateQueryVariables, requestHeaders?: GraphQLClientRequestHeaders, signal?: RequestInit['signal']): Promise<GetLegalPageTemplateQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetLegalPageTemplateQuery>({ document: GetLegalPageTemplateDocument, variables, requestHeaders: { ...requestHeaders, ...wrappedRequestHeaders }, signal }), 'GetLegalPageTemplate', 'query', variables);

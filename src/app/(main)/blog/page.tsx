@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
-import BlogCard from '@/app/blog/_components/blog-card'
-import BlogHero from '@/app/blog/_components/blog-hero'
+import BlogCard from '@/app/(main)/blog/_components/blog-card'
+import BlogHero from '@/app/(main)/blog/_components/blog-hero'
 import { Cta } from '@/components/blocks/cta'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { PaginationComponent } from '@/components/shared/pagination'

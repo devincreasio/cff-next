@@ -1,10 +1,9 @@
 import { BlogListLoadMore } from '@/app/(main)/blog/_components/blog-list-load-more'
 import { Cta } from '@/components/blocks/cta'
+import { BlogHero } from '@/components/blog/blog-hero'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { generateSeo } from '@/components/shared/generate-seo'
 import { api } from '@/lib/api'
-
-import { BlogHero } from '../blog/_components/blog-hero'
 
 export const revalidate = 3600
 

@@ -1,19 +1,20 @@
 'use client'
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { ACCOUNTS_URL } from '@/constants'
 
 import { useModalStore } from '../_store'
 
 const loginOptions = [
     {
         color: '#2CA01C',
-        href: 'https://accounts.cashflowfrog.com/qbo/oauth2/authorization',
+        href: `${ACCOUNTS_URL}/qbo/oauth2/authorization`,
         label: 'Connect to QuickBooks',
         logo: null,
     },
     {
         color: '#3C6EE1',
-        href: 'https://accounts.cashflowfrog.com/freshbooks/oauth2/authorization',
+        href: `${ACCOUNTS_URL}/freshbooks/oauth2/authorization`,
         label: 'Connect to FreshBooks',
         logo: (
             <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +27,7 @@ const loginOptions = [
     },
     {
         color: '#0D82A9',
-        href: 'https://accounts.cashflowfrog.com/xero/oauth2/authorization',
+        href: `${ACCOUNTS_URL}/xero/oauth2/authorization`,
         label: 'Connect to Xero',
         logo: (
             <svg fill="none" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +62,7 @@ const loginOptions = [
     },
     {
         color: '#226DB4',
-        href: 'https://accounts.cashflowfrog.com/zoho/oauth2/authorization',
+        href: `${ACCOUNTS_URL}/zoho/oauth2/authorization`,
         label: 'Connect to Zoho Books',
         logo: (
             <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

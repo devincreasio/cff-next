@@ -1,10 +1,9 @@
 import Image from 'next/image'
 
+import { BlurCircle } from '@/components/shared/blur-circle'
 import { Button } from '@/components/ui/button'
 import { ACCOUNTS_URL } from '@/constants'
 import { cn } from '@/lib/utils'
-
-import { BlurCircle } from '../shared/blur-circle'
 
 interface FeaturesProps {
     Description?: null | string

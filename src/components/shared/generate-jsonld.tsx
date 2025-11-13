@@ -1,5 +1,6 @@
 import type { FAQPage, Organization, WebPage, WithContext } from 'schema-dts'
 
+import { CLOUDINARY_URL, SITE_URL } from '@/constants'
 import { ComponentSeoSeoFragmentFragment } from '@/graphql/generated/sdk'
 import { api } from '@/lib/api'
 
@@ -91,9 +92,9 @@ export function getOrganizationJsonLd(): WithContext<Organization> {
         '@type': 'Organization',
         description:
             'Cash Flow Frog is a simple yet powerful cash flow forecasting and scenario planning tool. Try it now and get your forecast instantly.',
-        logo: 'https://res.cloudinary.com/cashflowfrog-com/image/upload/images/svg/logo.svg',
+        logo: `${CLOUDINARY_URL}/image/upload/images/svg/logo.svg`,
         name: 'CashFlowFrog',
-        url: 'https://cashflowfrog.com',
+        url: SITE_URL,
     }
 }
 

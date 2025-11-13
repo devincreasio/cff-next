@@ -1,6 +1,6 @@
 import { BlogCard } from '@/app/(main)/blog/_components/blog-card'
-import { BlogHero } from '@/app/(main)/blog/_components/blog-hero'
 import { Cta } from '@/components/blocks/cta'
+import { BlogHero } from '@/components/blog/blog-hero'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { generateSeo } from '@/components/shared/generate-seo'
 import { PaginationComponent } from '@/components/shared/pagination'

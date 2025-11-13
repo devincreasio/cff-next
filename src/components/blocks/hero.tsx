@@ -4,10 +4,9 @@ import Markdown from 'markdown-to-jsx'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
+import { BlurCircle } from '@/components/shared/blur-circle'
 import { Button } from '@/components/ui/button'
 import { ACCOUNTS_URL } from '@/constants'
-
-import { BlurCircle } from '../shared/blur-circle'
 
 interface HeroProps {
     buttonSlot?: React.ReactNode

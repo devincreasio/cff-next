@@ -1,6 +1,6 @@
 import Markdown from 'markdown-to-jsx'
 
-import { BlurCircle } from '../shared/blur-circle'
+import { BlurCircle } from '@/components/shared/blur-circle'
 
 interface AnswersProps {
     answers: string[]

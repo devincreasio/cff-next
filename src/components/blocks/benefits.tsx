@@ -1,8 +1,7 @@
 import Image from 'next/image'
 
+import { BlurCircle } from '@/components/shared/blur-circle'
 import { cn } from '@/lib/utils'
-
-import { BlurCircle } from '../shared/blur-circle'
 
 interface BenefitsProps {
     data:

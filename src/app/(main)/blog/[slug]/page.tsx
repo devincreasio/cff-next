@@ -8,6 +8,7 @@ import { PostHero } from '@/components/blog/post-hero'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { GenerateJsonLd } from '@/components/shared/generate-jsonld'
 import { generateSeo } from '@/components/shared/generate-seo'
+import { SITE_URL } from '@/constants'
 import { api } from '@/lib/api'
 import { formatDate } from '@/lib/utils'
 
@@ -45,7 +46,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         headline: post.Title,
         image: post.ImageFile?.url,
         mainEntityOfPage: {
-            '@id': `https://cashflowfrog.com/blog/${post.Slug}`,
+            '@id': `${SITE_URL}/blog/${post.Slug}`,
             '@type': 'WebPage',
         },
         publisher: {

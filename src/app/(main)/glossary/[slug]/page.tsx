@@ -9,6 +9,7 @@ import { PostHero } from '@/components/blog/post-hero'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { GenerateJsonLd } from '@/components/shared/generate-jsonld'
 import { generateSeo } from '@/components/shared/generate-seo'
+import { SITE_URL } from '@/constants'
 import { api } from '@/lib/api'
 import { formatDate } from '@/lib/utils'
 
@@ -58,7 +59,7 @@ export default async function GlossaryPageTemplate({ params }: GlossaryPageTempl
         headline: data.Name,
         image: data.Image?.url,
         mainEntityOfPage: {
-            '@id': `https://cashflowfrog.com/glossary/${data.Slug}`,
+            '@id': `${SITE_URL}/glossary/${data.Slug}`,
             '@type': 'WebPage',
         },
     }

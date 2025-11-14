@@ -56,7 +56,7 @@ export function HeroWithLottie({ description, title }: HeroWithLottieProps) {
                       shadow-[0px_0.6px_23.92px_0px_#42424A05,0px_4.78px_114.83px_0px_#42424A1A]
                     `}
                 >
-                    <div className={`aspect-[19/10] w-full rounded-xl bg-white shadow-custom lg:p-5`}>
+                    <div className={`aspect-19/10 w-full rounded-xl bg-white shadow-custom lg:p-5`}>
                         <Lottie animationData={lottieAnimation} loop={true} />
                     </div>
                 </div>

@@ -24,6 +24,7 @@ export default function MobileMenu({ menu }: MobileMenuProps) {
         <Sheet onOpenChange={setIsOpen} open={isOpen}>
             <SheetTrigger asChild>
                 <button
+                    aria-label="Open menu"
                     className="text-primary-200 md:hidden"
                     onClick={() => {
                         setIsOpen(true)

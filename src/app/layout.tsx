@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Manrope } from 'next/font/google'
 
 import { SITE_URL } from '@/constants'
@@ -31,6 +32,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <GoogleTagManager gtmId="GTM-MDM9PVK" />
             <body className={`${manrope.className} antialiased`}>{children}</body>
         </html>
     )
